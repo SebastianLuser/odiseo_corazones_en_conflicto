@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 55: screen expects a non-empty block.
+    elif estado_corazon == "Rojo":
+                                  ^
+
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Fri Jun 14 00:43:50 2024
