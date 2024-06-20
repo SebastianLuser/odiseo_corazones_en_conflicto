@@ -1,48 +1,68 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-After initialization, but before game start.
-  File "game/script.rpy", line 60, in analyze_screen
-    screen mostrar_estado_corazon():
-  File "game/script.rpy", line 60, in analyze
-    screen mostrar_estado_corazon():
-  File "game/script.rpy", line 60, in analyze
-    screen mostrar_estado_corazon():
-  File "game/script.rpy", line 61, in analyze
-    if puntaje_penelope >= puntaje_afrodita and puntaje_penelope >= puntaje_atenea:
-SyntaxError: invalid syntax (game/script.rpy, line 67)
+While loading <renpy.display.im.Image object ('habitacion_manana.png') at 0x00000000052ad430>:
+  File "game/script.rpy", line 267, in script
+    odiseo "{i}A veces no logro entender a esta mujer, siempre actúa como si yo le estuviese escondiendo algo. Y ¿por qué sintió la necesidad de recordarme el collar? Bueno, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
+  File "game/script.rpy", line 267, in script
+    odiseo "{i}A veces no logro entender a esta mujer, siempre actúa como si yo le estuviese escondiendo algo. Y ¿por qué sintió la necesidad de recordarme el collar? Bueno, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
+  File "renpy/common/000window.rpy", line 126, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 70, in _window_show
+    renpy.with_statement(trans)
+OSError: Couldn't find file 'pajaros_cantando.mp3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\bootstrap.py", line 359, in bootstrap
+  File "C:\Users\franc\Documents\renpy\renpy\bootstrap.py", line 359, in bootstrap
     renpy.main.main()
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\main.py", line 635, in main
+  File "C:\Users\franc\Documents\renpy\renpy\main.py", line 637, in main
     run(restart)
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\main.py", line 86, in run
-    renpy.display.screen.analyze_screens()
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\display\screen.py", line 996, in analyze_screens
-    s.ast.analyze_screen()
-  File "game/script.rpy", line 60, in analyze_screen
-    screen mostrar_estado_corazon():
-  File "game/script.rpy", line 60, in analyze
-    screen mostrar_estado_corazon():
-  File "game/script.rpy", line 60, in analyze
-    screen mostrar_estado_corazon():
-  File "game/script.rpy", line 61, in analyze
-    if puntaje_penelope >= puntaje_afrodita and puntaje_penelope >= puntaje_atenea:
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\py3analysis.py", line 559, in is_constant_expr
-    node, literal = ccache.ast_eval_literal(expr)
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\py3analysis.py", line 785, in ast_eval_literal
-    expr = py_compile(expr, 'eval', ast_node=True)
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\python.py", line 1144, in py_compile
-    raise e
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "D:\Descargas\renpy-8.2.1-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/script.rpy, line 67)
+  File "C:\Users\franc\Documents\renpy\renpy\main.py", line 145, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\franc\Documents\renpy\renpy\execution.py", line 955, in run_context
+    context.run()
+  File "game/script.rpy", line 267, in script
+    odiseo "{i}A veces no logro entender a esta mujer, siempre actúa como si yo le estuviese escondiendo algo. Y ¿por qué sintió la necesidad de recordarme el collar? Bueno, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "game/script.rpy", line 267, in script
+    odiseo "{i}A veces no logro entender a esta mujer, siempre actúa como si yo le estuviese escondiendo algo. Y ¿por qué sintió la necesidad de recordarme el collar? Bueno, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
+  File "C:\Users\franc\Documents\renpy\renpy\ast.py", line 2560, in execute
+    Say.execute(self)
+  File "C:\Users\franc\Documents\renpy\renpy\ast.py", line 583, in execute
+    statement_name(stmt_name)
+  File "C:\Users\franc\Documents\renpy\renpy\ast.py", line 52, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 126, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 70, in _window_show
+    renpy.with_statement(trans)
+  File "C:\Users\franc\Documents\renpy\renpy\exports.py", line 1782, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\franc\Documents\renpy\renpy\display\core.py", line 1549, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Users\franc\Documents\renpy\renpy\display\core.py", line 2166, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\franc\Documents\renpy\renpy\display\core.py", line 2738, in interact_core
+    renpy.audio.audio.interact()
+  File "C:\Users\franc\Documents\renpy\renpy\audio\audio.py", line 1245, in interact
+    periodic()
+  File "C:\Users\franc\Documents\renpy\renpy\audio\audio.py", line 1199, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "C:\Users\franc\Documents\renpy\renpy\audio\audio.py", line 1177, in periodic_thread_main
+    periodic_pass()
+  File "C:\Users\franc\Documents\renpy\renpy\audio\audio.py", line 1119, in periodic_pass
+    c.periodic()
+  File "C:\Users\franc\Documents\renpy\renpy\audio\audio.py", line 528, in periodic
+    topf = load(filename)
+  File "C:\Users\franc\Documents\renpy\renpy\audio\audio.py", line 72, in load
+    rv = renpy.loader.load(fn, directory="audio")
+  File "C:\Users\franc\Documents\renpy\renpy\loader.py", line 672, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'pajaros_cantando.mp3'.
 
-Windows-10-10.0.22621 AMD64
-Ren'Py 8.2.1.24030407
+Windows-10-10.0.22631 AMD64
+Ren'Py 8.2.3.24061702
 Odiseo_Corazones 1.0
-Fri Jun 14 01:06:06 2024
+Thu Jun 20 16:31:29 2024

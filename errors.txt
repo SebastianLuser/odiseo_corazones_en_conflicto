@@ -2,9 +2,29 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 55: screen expects a non-empty block.
-    elif estado_corazon == "Rojo":
-                                  ^
+File "game/script.rpy", line 335: expected end of line
+    stop music bgm_murmullos
+               ^
 
-Ren'Py Version: Ren'Py 8.2.1.24030407
-Fri Jun 14 00:43:50 2024
+File "game/script.rpy", line 336: expected end of line
+    stop sound sfx_campana_escuela
+               ^
+
+File "game/script.rpy", line 356: expected end of line
+    stop music bgm_murmullos
+               ^
+
+File "game/script.rpy", line 357: expected end of line
+    stop sound sfx_campana_escuela
+               ^
+
+File "game/script.rpy", line 434: expected end of line
+    stop music bgm_saxofon_afrodita
+               ^
+
+File "game/script.rpy", line 450: expected end of line
+    stop music bgm_saxofon_afrodita
+               ^
+
+Ren'Py Version: Ren'Py 8.2.3.24061702
+Thu Jun 20 16:19:18 2024
