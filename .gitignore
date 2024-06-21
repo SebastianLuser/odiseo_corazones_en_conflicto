@@ -3,3 +3,6 @@
 /game/cache
 /game/saves
 log.txt
+*.wav
+*.rpyc
+traceback.txt
