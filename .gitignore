@@ -6,3 +6,4 @@ log.txt
 *.wav
 *.rpyc
 traceback.txt
+*.mp3
