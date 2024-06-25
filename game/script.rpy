@@ -78,7 +78,7 @@ define bgm_saxofon_afrodita = "saxofon_afrodita.wav"
 
 define bgm_piano_atenea = "piano_atenea.wav"
 
-define sfx_timbre_casa = "timbre_casa.mp3"
+define sfx_timbre_casa = "timbre_casa.wav"
 define bgm_violin_penelope = "violin_penelope.mp3"
 
 define sfx_tocar_puerta = "tocar_puerta.wav"
