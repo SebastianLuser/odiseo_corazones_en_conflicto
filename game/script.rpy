@@ -209,8 +209,8 @@ label game_start:
     show odiseo_dormido at left
     show penelope_neutra at right
 
-    penelope "¿Hola? {w=1.0} ¿[player_name]? {w=1.0} ¿Estas ahí?"
-    odiseo "¿Penélope? {w=1.0} ¿Qué haces despierta a esta hora? {w=1.0} ¿No deberías estar dormida ya?"
+    penelope "¿Hola?{w=1.0}¿[player_name]?{w=1.0}¿Estas ahí?"
+    odiseo "¿Penélope?{w=1.0}¿Qué haces despierta a esta hora?{w=1.0}¿No deberías estar dormida ya?"
     penelope "Sí, perdón por molestarte a esta hora, pero necesitaba preguntarte algo."
 
     hide odiseo_dormido
@@ -237,14 +237,14 @@ label opcion_1:
     hide odiseo_neutro
     show odiseo_hartazgo at left
 
-    odiseo "¿En serio quieres seguir con eso? Ya te dije que no miré a ninguna chica, solo pasó por donde yo miraba."
+    odiseo "¿En serio quieres seguir con eso?{w=1.0} Ya te dije que no miré a ninguna chica{w=0.5}, solo pasó por donde yo miraba."
 
-    penelope "Eres un inmaduro, no sé si aún te sigo gustando, me pones muy insegura Odiseo."
+    penelope "Eres un inmaduro, no sé si aún te sigo gustando{w=0.5}, me pones muy insegura [player_name]."
 
     hide odiseo_hartazgo
     show odiseo_romantico at left
 
-    odiseo "Eres la única mujer en la que pienso Penélope, y siempre te lo dije."
+    odiseo "Eres la única mujer en la que pienso Penélope{w=0.5}, y siempre te lo dije."
 
     jump respuesta_penelope
 
@@ -253,34 +253,34 @@ label opcion_2:
     hide odiseo_neutro
     show odiseo_triste at left
 
-    odiseo "Perdón, creí que estabas molesta y decidí darte tu espacio."
+    odiseo "Perdón{w=0.5}, creí que estabas molesta y decidí darte tu espacio."
 
     hide penelope_victima
     show penelope_enojada at right
 
-    penelope "¡CLARO QUE ESTABA MOLESTA! "
-    penelope "Pero quería escucharte, no me gustó lo que pasó hoy."
+    penelope "¡CLARO QUE ESTABA MOLESTA!"
+    penelope "Pero quería escucharte{w=0.5}, no me gustó lo que pasó hoy."
     hide odiseo_triste
     show odiseo_romantico at left
 
-    odiseo "Lo sé, pero ya te dije que no estaba mirando a ninguna chica, mis ojos son solo para ti."
+    odiseo "Lo sé{w=0.5}, pero ya te dije que no estaba mirando a ninguna chica{w=0.5}, mis ojos son solo para ti."
 
     jump respuesta_penelope
 
 label respuesta_penelope:
 
-    penelope "Es siempre lo mismo contigo, piensas que con un par de palabras bonitas me tienes a tus pies. Bueno, mañana no voy a ir al colegio, no me siento muy bien, y más vale que no te quites el collar que te regalé."
-
+    penelope "Es siempre lo mismo contigo{w=0.5}, piensas que con un par de palabras bonitas me tienes a tus pies."
+    penelope "Bueno{w=0.5}, mañana no voy a ir al colegio{w=0.5}, no me siento muy bien{w=0.5}, y más vale que no te quites el collar que te regalé."
     hide odiseo_romantico
     show odiseo_feliz at left
 
-    odiseo "Tranquila, no pienso sacármelo. Que descanses."
-
+    odiseo "Tranquila{w=0.5}, no pienso sacármelo."
+    odiseo "Que descanses."
     play sound sfx_cortar_llamada
 
     hide penelope_enojada
 
-    odiseo "{i}Qué mujer intensa, mañana veré si la voy a visitar a su casa.{/i}"
+    odiseo "{i}Qué mujer intensa{w=0.5}, mañana veré si la voy a visitar a su casa.{/i}"
 
     scene black with dissolve
     pause 3.0
@@ -298,13 +298,13 @@ label escena_2:
 
     show odiseo_neutro at left
 
-    odiseo "{i}A veces no logro entender a esta mujer, siempre actúa como si yo le estuviese escondiendo algo. Y ¿por qué sintió la necesidad de recordarme el collar? Bueno, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
-
+    odiseo "{i}A veces no logro entender a esta mujer{w=0.5}, siempre actúa como si yo le estuviese escondiendo algo.{/i}"
+    odiseo "{i}Y{w=1.0} ¿por qué sintió la necesidad de recordarme el collar? Bueno{w=0.5}, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
     hide odiseo_neutro
 
     scene black with dissolve
     stop music
-    pause 3.0
+    pause 2.0
 
     jump escena_3
 
@@ -320,28 +320,28 @@ label escena_3:
     show odiseo_preocupado at left
     $ puntaje_afrodita = 0 
 
-    odiseo "Me pregunto si Penélope se siente mejor ya. ¿Tal vez me envió algún mensaje?"
+    odiseo "Me pregunto si Penélope se siente mejor ya.{w=1.0} ¿Tal vez me envió algún mensaje?"
 
     show screen celular_odiseo_screen
     odiseo "{i}Sin mensajes todavia{/i}"
-    pause 4.0
+    pause 2.0
     hide screen celular_odiseo_screen
 
     hide odiseo_preocupado
     show odiseo_triste at left
 
-    odiseo "Supongo que seguirá dormida, como no se sentía muy bien."
+    odiseo "Supongo que seguirá dormida{w=0.5}, como no se sentía muy bien."
 
     show afrodita_feliz at right
 
-    afrodita "¡Buen día [player_name]! Tenes mala cara... ¿Se pelearon con Penélope? ¿¡Ya no están juntos!?"
+    afrodita "¡Buen día [player_name]!{w=1.0} Tenes mala cara...{w=1.0} ¿Se pelearon con Penélope?{w=0.5} ¿¡Ya no están juntos!?"
 
-    odiseo "Hola Afrodita. Y no, no nos separamos. Seguimos juntos. Penélope no vino porque está enferma, y me tiene preocupado."
-
+    odiseo "Hola Afrodita.{w=1.0} Y no{w=0.5}, no nos separamos.{w=1.0} Seguimos juntos."
+    odiseo "Penélope no vino porque está enferma{w=0.5}, y me tiene preocupado."
     hide afrodita_feliz
     show afrodita_traviesa at right
 
-    afrodita "Ay noooooo, que peeeeeena... En fin, mi celular está casi muerto ya y me olvidé el cargador en el aula. ¡AY, YA SE! [player_name], ¿no me acompañas a buscarlo?"
+    afrodita "Ay noooooo{w=0.5}, que peeeeeena...{w=1.0} En fin{w=0.5}, mi celular está casi muerto ya y me olvidé el cargador en el aula. ¡AY, YA SE! [player_name], ¿no me acompañas a buscarlo?"
 
     odiseo "¿En serio? ¿Ese es tu mejor movimiento? Ayer estabas más creativa."
 
@@ -771,7 +771,7 @@ label opcion_1_acto_1_escena_7:
 
     show penelope_feliz_llorando at right
 
-    penelope "Siempre encuentras la manera de quedar bien parado. Me gustas mucho, Odiseo. Ven entra, más tarde acompáñame a comprar medicamentos."
+    penelope "Siempre encuentras la manera de quedar bien parado. Me gustas mucho, [player_name]. Ven entra, más tarde acompáñame a comprar medicamentos."
 
     hide penelope_feliz_llorando
 
