@@ -83,6 +83,8 @@ define bgm_violin_penelope = "violin_penelope.mp3"
 
 define sfx_tocar_puerta = "tocar_puerta.wav"
 
+define sfx_llaves_puerta = "llaves_puerta.wav"
+
 # Variable temporal para almacenar el nombre introducido
 default temp_name = ""
 
@@ -231,7 +233,6 @@ label game_start:
             jump opcion_2
 
 label opcion_1:
-    $ estado_corazon = "Amarillo"
     $ puntaje_penelope = puntaje_penelope + 3
     hide odiseo_neutro
     show odiseo_hartazgo at left
@@ -248,7 +249,6 @@ label opcion_1:
     jump respuesta_penelope
 
 label opcion_2:
-    $ estado_corazon = "Amarillo"
     $ puntaje_penelope = puntaje_penelope + 3
     hide odiseo_neutro
     show odiseo_triste at left
@@ -374,9 +374,9 @@ label opcion_1_escena_3:
 
 
 label opcion_2_escena_3:
+    $ puntaje_afrodita = puntaje_afrodita + 2
     hide odiseo_triste
     show odiseo_romantico at left
-    $ puntaje_afrodita = puntaje_afrodita + 2
     odiseo "Bueno, igual ya estoy un poco tarde. Supongo que no pasa nada si pasamos a buscar tu cargador."
 
     hide afrodita_traviesa
@@ -529,6 +529,7 @@ label escena_5:
             jump opcion_2_acto_1_escena_5
 
 label opcion_1_acto_1_escena_5:
+    $ puntaje_atenea  = puntaje_atenea + 2 
     hide odiseo_neutro
     show odiseo_feliz at left
 
@@ -541,7 +542,6 @@ label opcion_1_acto_1_escena_5:
 
     hide odiseo_feliz
     hide atenea_feliz
-    $ puntaje_atenea += 1 
 
     scene black with dissolve
     stop music
@@ -631,6 +631,7 @@ label escena_6:
             jump opcion_2_acto_1_escena_6
 
 label opcion_1_acto_1_escena_6:
+    $ puntaje_atenea  = puntaje_atenea + 2 
     hide odiseo_preocupado
     show odiseo_neutro at left
 
@@ -679,9 +680,9 @@ label opcion_2_acto_1_escena_6:
     jump escena_7
 
 label final_atenea:
-    show screen celular_odiseo
+    show screen celular_odiseo_screen
     narrator "[player_name] ve su celular, y sin aún señales de Penélope, decide escribirle un mensaje en el que le explica que lo mejor para ambos será que corten la relación, el aún es muy joven y no se siente preparado para estar en pareja."
-    hide celular_odiseo with dissolve
+    hide celular_odiseo_screen with dissolve
 
     scene black with dissolve
     pause 1.0
@@ -764,7 +765,7 @@ label escena_7:
 
 label opcion_1_acto_1_escena_7:
     hide odiseo_romantico
-    show odiseo_serio at left
+    show odiseo_hartazgo at left
 
     odiseo "No voy a mentirte, hay veces en las que puedo llegar a dudar, pero me acuerdo de lo bien que me siento a tu lado y las dudas se me despejan."
 
@@ -776,7 +777,7 @@ label opcion_1_acto_1_escena_7:
 
     pause 1.0
 
-    hide odiseo_serio
+    hide odiseo_hartazgo
 
     scene black with dissolve
     stop music
