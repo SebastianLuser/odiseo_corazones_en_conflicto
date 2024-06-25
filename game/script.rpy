@@ -2,6 +2,7 @@
 define odiseo = Character("Odiseo", color="#c8ffc8")
 define penelope = Character("Penélope", color="#e7d532")
 define afrodita = Character("Afrodita", color="#ec7171")
+define atenea = Character("Atenea", color="#633c0a")
 define narrator = Character(None)
 
 default player_name = "Odiseo"
@@ -14,11 +15,14 @@ image odiseo_romantico = "odiseo_romantico.png"
 image odiseo_triste = "odiseo_triste.png"
 image odiseo_feliz = "odiseo_feliz.png"
 image odiseo_preocupado = "odiseo_triste.png"
+image odiseo_sorprendido = "odiseo_sorprendido.png"
 
 image penelope_neutra = "penelope_neutra.png"
 image penelope_enojada = "penelope_enojada.png"
 image penelope_victima = "penelope_triste.png"
 image penelope_feliz = "penelope_feliz.png"
+image penelope_avergonzada = "penelope_avergonzada.png"
+image penelope_feliz_llorando = "penelope_feliz_llorando.png"
 
 image afrodita_neutra = "afrodita_neutra.png"
 image afrodita_enojada = "afrodita_enojada.png"
@@ -28,6 +32,8 @@ image afrodita_feliz = "afrodita_traviesa.png"
 image atenea_neutra = "atenea_neutra.png"
 image atenea_enojada = "atenea_enojada.png"
 image atenea_traviesa = "atenea_feliz.png"
+
+image calypso_silueta = "calypso_desenfocada.png"
 
 image corazon_gris = "corazon_gris.png"
 image corazon_amarillo = "corazon_amarillo.png"
@@ -40,6 +46,13 @@ image habitacion_manana = "habitacion_manana.png"
 image pasillo_escuela = "pasillo_01.png"
 image aula_escuela = "aula_vacia.png"
 image fondo_corazones = "fondo_corazones.png"
+image aula_llena = "aula_llena.png"
+image aula_ajedrez = "aula_ajedrez.png"
+image aula_musica = "aula_musica.png"
+
+image puerta_casa_penelope = "puerta_penelope.png"
+
+image final_odiseo_afrodita = "aula_corazones.png"
 
 image logo = "logo.png"
 
@@ -62,6 +75,11 @@ define bgm_murmullos = "murmullos.wav"
 
 define sfx_puerta_cierra = "puerta_cierra.wav"
 define bgm_saxofon_afrodita = "saxofon_afrodita.wav"
+
+define bgm_piano_atenea = "piano_atenea.wav"
+
+define sfx_timbre_casa = "timbre_casa.mp3"
+define bgm_violin_penelope = "violin_penelope.mp3"
 
 # Variable temporal para almacenar el nombre introducido
 default temp_name = ""
@@ -299,6 +317,7 @@ label escena_3:
     play music bgm_murmullos
     play music bgm_fondo01
     show odiseo_preocupado at left
+    $ puntaje_afrodita = 0 
 
     odiseo "Me pregunto si Penélope se siente mejor ya. ¿Tal vez me envió algún mensaje?"
 
@@ -451,8 +470,7 @@ label opcion_2_acto_1_escena_4:
 
     odiseo "¿Sabes qué? Tenés razón, PENÉLOPE siempre está con algún problema, y la verdad siempre me gustaron más las pelirrojas."
 
-    narrator "Cuando las cosas funcionan no las cambies, y cuando no funcionan cámbialas y mejor si es con una pelirroja, Odiseo y Afrodita pasaron todo el día juntos, para después de clases acompañarla a la casa, espera ¿Sus padres no estaban de viaje?"
-
+    
     hide odiseo_romantico
     hide afrodita_feliz
     stop music
@@ -462,8 +480,379 @@ label opcion_2_acto_1_escena_4:
 
     jump escena_collar_afrodita
 
+label final_afrodita:
+    scene final_odiseo_afrodita at full_screen with dissolve
+    narrator "Cuando las cosas funcionan no las cambies, y cuando no funcionan cámbialas y mejor si es con una pelirroja, Odiseo y Afrodita pasaron todo el día juntos, para después de clases acompañarla a la casa, espera ¿Sus padres no estaban de viaje?"
+    play music bgm_saxofon_afrodita
+    return
+    
 label escena_5:
-    # Continuar con la siguiente escena aquí
+    scene black with dissolve
+    hide screen collar_descargado_screen
+    hide screen collar_cargado_screen
+    show screen mostrar_estado_corazon
+    scene aula_llena at full_screen with dissolve
+    play music bgm_murmullos
+
+    show odiseo_preocupado at left
+
+    odiseo "Qué clase más aburrida... ¿Qué estará haciendo Penélope? Últimamente discutimos demasiado, no sé qué pensar."
+
+    narrator "{color=#fff}¡ODISEO! ¡ATENCIÓN A MI CLASE! QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
+
+    odiseo "Disculpe profesor, es solo que no dormí bien."
+
+    stop music
+    play sound sfx_campana_escuela
+    hide screen aula_llena
+    scene pasillo_escuela at full_screen with dissolve
+    show atenea_neutra at right
+    play music bgm_murmullos
+
+    atenea "Buenos días Odiseo. Me resulta extraño que el profesor tenga que llamarte la atención ¿Está todo bien?"
+
+    show odiseo_neutro at left
+
+    odiseo "Hola Atenea. Realmente no sé qué pensar, últimamente con Penélope solo discutimos."
+
+    atenea "¿A qué se debe eso? Pensaste en hablarlo con ella, las mejores soluciones a veces son las más fáciles."
+
+    odiseo "Ella piensa que soy un mujeriego, y no es así. Me gustaría hablarlo pero hoy no vino a clases, se sentía enferma."
+
+    atenea "Bueno, yo ahora tengo que ir al club de Ajedrez, pero si quieres seguir hablando, acompáñame y jugamos una partida."
+
+    menu:
+        "Aceptar la ayuda de Atenea.":
+            jump opcion_1_acto_1_escena_5
+
+        "Rechazar la ayuda de Atenea.":
+            jump opcion_2_acto_1_escena_5
+
+label opcion_1_acto_1_escena_5:
+    hide odiseo_neutro
+    show odiseo_feliz at left
+
+    odiseo "Me parece bien, te voy a dejar jugar con blancas a ver si es suficiente ventaja."
+
+    hide atenea_neutra
+    show atenea_feliz at right
+
+    atenea "JA JA, sabes muy bien que nunca pudiste ganarme, bueno vamos."
+
+    hide odiseo_feliz
+    hide atenea_feliz
+    $ puntaje_atenea += 1 
+
+    scene black with dissolve
+    stop music
+    play sound puerta_cierra
+    pause 2.0
+
+    jump escena_6
+
+label opcion_2_acto_1_escena_5:
+    hide odiseo_neutro
+    show odiseo_feliz at left
+
+    odiseo "No, tranquila. Ya le voy a poder encontrar la vuelta, además no tengo ganas de humillarte."
+
+    hide atenea_neutra
+    show atenea_feliz at right
+
+    atenea "Nos vemos más tarde entonces, y sabes muy bien que nunca me ganaste en una partida Odiseo."
+
+    show odiseo_dormido at left
+
+    odiseo "¡MIRA LA HORA! Ya se me hizo tarde, le prometí al club de música ir a escucharlos ¡Nos vemos!"
+
+    hide odiseo_dormido
+    hide atenea_feliz
+    show atenea_triste at right
+
+    pause 2.0
+    hide atenea_triste
+
+    scene black with dissolve
+    stop music
+    pause 2.0
+
+    jump escena_8
+
+label escena_6:
+    scene black
+    show screen mostrar_estado_corazon
+    scene aula_ajedrez at full_screen with dissolve
+    play music bgm_piano_atenea
+
+    show odiseo_preocupado at left
+    show atenea_neutra at right
+
+    odiseo "Entonces quieres que te gane en una partida de Ajedrez, ¿y eso se supone que me ayude a resolver mis problemas?"
+
+    atenea "Precisamente. En mi opinión, no existe manera más eficaz de reflexionar que jugando una partida de Ajedrez."
+
+    hide odiseo_preocupado
+    show odiseo_neutro at left
+
+    odiseo "De hecho, sí las hay, pero está bien, vamos tú eres blancas."
+    hide odiseo_neutro
+    hide atenea_neutra
+    narrator "La partida entre ODISEO y ATENEA termina tan rápidamente como comenzó."
+
+    show odiseo_sorprendido at left
+
+    odiseo "¡¿Tan rápido?! Parece que perdí la práctica, últimamente estuve jugando mucho con Penélope."
+
+    show atenea_feliz at right
+
+    atenea "La práctica es la que hace al maestro así que podrías practicar más seguido conmigo. Además, antes durabas un poco más."
+
+    odiseo "Igualmente, no entiendo cuál fue el error, en ningún momento comprometí mi reina e igualmente perdí."
+
+    atenea "El problema con tu estrategia fue concentrarte más en la reina que en el rey. Es verdad que la reina es la pieza más fuerte del tablero, pero la más importante siempre va a ser el rey."
+
+    hide atenea_feliz
+    show atenea_neutra at right
+
+    atenea "¿Se entiende cuál es mi punto?"
+
+    hide odiseo_sorprendido
+    show odiseo_preocupado at left
+
+    odiseo "Eres bastante bonita cuando te pones reflexiva."
+
+    atenea "Odiseo, esto se supondría que sería una charla sobre tú y Penélope, no cambies el tema."
+
+    menu:
+        "Pedirle ayuda directa a ATENEA.":
+            jump opcion_1_acto_1_escena_6
+
+        "Razonarlo vos mismo.":
+            jump opcion_2_acto_1_escena_6
+
+label opcion_1_acto_1_escena_6:
+    hide odiseo_preocupado
+    show odiseo_neutro at left
+
+    odiseo "Suena como que tú tienes una idea ¿En qué pensaste Atenea?"
+
+    atenea "No estoy diciendo que necesariamente sea así, pero tal vez priorizas demasiado los sentimientos de Penélope por sobre los tuyos. Pones la relación, por sobre ti."
+
+    hide odiseo_neutro
+    show odiseo_sorprendido at left
+
+    odiseo "¿Estás diciendo que debería terminar con Penélope? ¿Por qué?"
+
+    atenea "Solo te estoy ayudando a pensar un poco fuera de la caja. Tal vez lo mejor para vos ahora mismo sería concentrarte en vos mismo."
+
+    show odiseo_neutro at left
+    odiseo "Lo que dices tiene sentido. Bueno, nos vemos Atenea. Gracias."
+
+    hide atenea_neutra
+    odiseo "{i}Le mandaré un mensaje a Penélope. Esta relación no da para mucho más.{/i}"
+    hide odiseo_neutro
+
+    jump escena_collar_atenea
+
+    
+label opcion_2_acto_1_escena_6:
+    hide odiseo_preocupado
+    show odiseo_neutro at left
+
+    odiseo "Okey, era solo un chiste, pero creo que esto realmente me ayudó."
+
+    show odiseo_feliz at left
+
+    odiseo "Muchas gracias, Atenea. Siempre es bueno hablar contigo, pero ahora mejor iré a ver a Penélope, nos vemos."
+
+    hide atenea_neutra
+    show atenea_feliz at right
+
+    atenea "Me alegra haber sido de ayuda. Nos vemos Odiseo. Saluda a Penélope de mi parte."
+
+    hide odiseo_feliz
+    hide atenea_feliz
+
+    scene black with dissolve
+    stop music
+    pause 2.0
+    jump escena_7
+
+label final_atenea:
+    show screen celular_odiseo
+    narrator "Odiseo ve su celular, y sin aún señales de Penélope, decide escribirle un mensaje en el que le explica que lo mejor para ambos será que corten la relación, el aún es muy joven y no se siente preparado para estar en pareja."
+    hide celular_odiseo with dissolve
+
+    scene black with dissolve
+    pause 1.0
+    stop music
+    return
+
+label escena_7:
+    scene black
+    show screen mostrar_estado_corazon
+    scene puerta_casa_penelope at full_screen with dissolve
+    play music bgm_violin_penelope
+
+    show odiseo_preocupado at left
+    play sound sfx_timbre_casa
+
+    odiseo "¡Penélope! ¿Estás en casa?"
+
+    play sound sfx_llaves_puerta
+    show penelope_feliz at right
+
+    penelope "Odiseo! ¡Hola! ¿Qué haces aquí? ¿No deberías estar en clases aun?"
+
+    hide odiseo_preocupado
+    show odiseo_feliz at left
+
+    odiseo "Debería, sí, pero quería ver cómo estabas, me tenías muy preocupado."
+
+    hide penelope_feliz
+    show penelope_enojada at right
+    
+    penelope "¿A sí? ¿Y desde cuándo te preocupo tanto? Anoche no parecías tan preocupado."
+
+    hide odiseo_feliz
+    show odiseo_neutro at left
+
+    odiseo "Por favor, Penélope, no empieces. Sabes muy bien que me importas mucho, y te estuve notando un poco rara últimamente."
+
+    hide penelope_enojada
+    show penelope_avergonzada at right
+
+    penelope "¿Rara? ¿Yo? Debe ser cosa tuya, o seguro que la teñida de Afrodita te anda metiendo ideas en la cabeza."
+
+    hide odiseo_neutro
+    show odiseo_preocupado at left
+
+    odiseo "Deja de cambiar el tema, vamos decime qué te anda pasando."
+
+    hide penelope_avergonzada
+    show penelope_enojada at right
+
+    penelope "¡Constantemente se te están confesando otras chicas! Y todas son más lindas, interesantes e inteligentes que yo."
+
+    hide odiseo_preocupado
+    show odiseo_hartazgo at left
+
+    odiseo "¡Eso no es verdad! Veamos, sí obviamente hay chicas interesadas en mí."
+    
+    hide odiseo_hartazgo
+    show odiseo_romantico at left
+    
+    odiseo "Pero tú eres la mujer que quiero para mí."
+
+    hide penelope_enojada
+    show penelope_triste at right
+
+    penelope "Y aunque así sea, no te creo que nunca dudes de eso. ¿En serio yo soy la única para vos?"
+
+    menu:
+        "Admitir que dudas, pero aun así decidís seguir adelante.":
+            jump opcion_1_acto_1_escena_7
+
+        "Esconder tus dudas, y mentirle a PENÉLOPE.":
+            jump opcion_2_acto_1_escena_7
+
+label opcion_1_acto_1_escena_7:
+    hide odiseo_romantico
+    show odiseo_serio at left
+
+    odiseo "No voy a mentirte, hay veces en las que puedo llegar a dudar, pero me acuerdo de lo bien que me siento a tu lado y las dudas se me despejan."
+
+    show penelope_feliz_llorando at right
+
+    penelope "Siempre encuentras la manera de quedar bien parado. Me gustas mucho, Odiseo. Ven entra, más tarde acompáñame a comprar medicamentos."
+
+    hide penelope_feliz_llorando
+
+    pause 1.0
+
+    hide odiseo_serio
+
+    scene black with dissolve
+    stop music
+    pause 1.0
+    jump escena_collar_penelope_final_1
+
+label final_penelope_1:
+    scene black
+    show screen mostrar_estado_corazon
+    play sound puerta_cierra
+    play music violin_penelope
+    scene puerta_casa_penelope at full_screen with dissolve
+
+    narrator "A veces ser honesto es la solución, otras veces, no tanto. Pero mañana será otro día, nuevas decisiones nos esperan."
+    pause 3.0
+    scene black with dissolve
+    stop music
+    return
+
+label opcion_2_acto_1_escena_7:
+    hide odiseo_romantico
+    show odiseo_dormido at left
+
+    odiseo "¿Dudar? ¿De qué dudaría? Eres la mujer más hermosa que conozco, no sé quién te pone todas esas ideas en la cabeza."
+
+    hide penelope_triste
+    show penelope_enojada
+    penelope "Okey, debe ser que aún no me siento bien, han sido días raros, mejor vuelvo adentro iré a descansar. Adiós Odiseo."
+
+    hide odiseo_dormido
+    show odiseo_triste at left
+
+    odiseo "Sí, la verdad, fueron días raros. Hasta mañana Penélope."
+
+    odiseo "{i}Creo que debería haber sido más sincero con mis sentimientos.{/i}"
+
+    play sound sfx_puerta_cierra
+    hide penelope_enojada
+
+    pause 2.0
+
+    hide odiseo_triste
+
+    scene black with dissolve
+    stop music
+    pause 1.0
+
+    jump escena_collar_penelope_final_2
+
+label final_penelope_2:
+    scene black
+    show screen mostrar_estado_corazon
+    play sound puerta_cierra
+    play music violin_penelope
+    scene puerta_casa_penelope at full_screen with dissolve
+    show odiseo_hartazgo
+
+    odiseo "Después de todo sigo sin entenderla, no sé lo que le molesta y menos aún lo que le gusta. Encima que vengo a visitarla, podría estar con Afrodita ahora mismo en cambio estoy ACÁ, me voy a casa supongo que mañana hablaremos."
+
+    scene black with dissolve
+    pause 2.0
+    
+    stop music
+    return
+
+label escena_8:
+    hide screen collar_descargado_screen
+    hide screen collar_cargado_screen
+    scene black
+    show screen mostrar_estado_corazon
+    scene aula_musica at full_screen with dissolve
+    show odiseo_neutro at left
+
+    show calypso_silueta at right
+
+    narrator "Odiseo continuará su día escolar, las mujeres parecen estar al acecho de nuestro galán."
+
+    odiseo "¿Qué? ¿No hay hombres en esta escuela?"
+
+    narrator "Gracias por jugar la demo de 'El Viaje de Odiseo: Corazones en Conflicto'. ¡Esperamos que hayas disfrutado esta experiencia! Mantente atento para la versión completa próximamente."
+    hide odiseo_neutro
+    # Final de la demo
     return
 
 label escena_collar_afrodita:
@@ -477,29 +866,146 @@ label escena_collar_afrodita:
         menu:
             "[player_name] aprieta el collar":
                 $ collar_cargado = False
-                jump collar_opcion_1a
+                jump collar_afrodita_opcion_1a
             "[player_name] no aprieta el collar":
-                jump collar_opcion_1b
+                jump collar_afrodita_opcion_1b
     else:
         show screen collar_descargado_screen
         narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
-        jump collar_opcion_2
+        jump collar_afrodita_opcion_2
 
-label collar_opcion_1a:
+label collar_afrodita_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_afrodita = 0
     narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
     # Transición a la escena y decisión primaria de origen
     jump escena_3
 
-label collar_opcion_1b:
+label collar_afrodita_opcion_1b:
     hide screen collar_cargado_screen
     narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
     # Transición a un final dado
-    jump escena_final_afrodita
+    jump final_afrodita
 
-label collar_opcion_2:
+label collar_afrodita_opcion_2:
     hide screen collar_descargado_screen
     narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
     # Transición a un final dado
-    jump escena_final_afrodita
+    jump final_afrodita
+
+
+label escena_collar_atenea:
+    scene black
+    show screen mostrar_estado_corazon
+    if collar_cargado:
+        show screen collar_cargado_screen
+        play sound sfx_collar_brilla
+        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Recuerda a Penélope. Recuerda lo que ella significa para él. Y con eso, él comienza a olvidar todo lo sucedido recién."
+
+        menu:
+            "[player_name] aprieta el collar":
+                $ collar_cargado = False
+                jump collar_atenea_opcion_1a
+            "[player_name] no aprieta el collar":
+                jump collar_atenea_opcion_1b
+    else:
+        show screen collar_descargado_screen
+        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+        jump collar_atenea_opcion_2
+
+label collar_atenea_opcion_1a:
+    hide screen collar_cargado_screen
+    $ puntaje_atenea = 0
+    narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
+    # Transición a la escena y decisión primaria de origen
+    jump escena_5
+
+label collar_atenea_opcion_1b:
+    hide screen collar_cargado_screen
+    narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
+    # Transición a un final dado
+    jump final_atenea
+
+label collar_atenea_opcion_2:
+    hide screen collar_descargado_screen
+    narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+    # Transición a un final dado
+    jump final_atenea
+
+
+label escena_collar_penelope_final_1:
+    scene black
+    show screen mostrar_estado_corazon
+    if collar_cargado:
+        show screen collar_cargado_screen
+        play sound sfx_collar_brilla
+        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Recuerda a Penélope. Recuerda lo que ella significa para él. Y con eso, él comienza a olvidar todo lo sucedido recién."
+
+        menu:
+            "[player_name] aprieta el collar":
+                $ collar_cargado = False
+                jump collar_penelope_final_1_opcion_1a
+            "[player_name] no aprieta el collar":
+                jump collar_penelope_final_1_opcion_1b
+    else:
+        show screen collar_descargado_screen
+        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+        jump collar_atenea_opcion_2
+
+label collar_penelope_final_1_opcion_1a:
+    hide screen collar_cargado_screen
+    $ puntaje_atenea = 0
+    narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
+    # Transición a la escena y decisión primaria de origen
+    jump escena_5
+
+label collar_penelope_final_1_opcion_1b:
+    hide screen collar_cargado_screen
+    narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
+    # Transición a un final dado
+    jump final_penelope_1
+
+label collar_penelope_final_1_opcion_2:
+    hide screen collar_descargado_screen
+    narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+    # Transición a un final dado
+    jump final_penelope_1
+
+
+label escena_collar_penelope_final_2:
+    scene black
+    show screen mostrar_estado_corazon
+    if collar_cargado:
+        show screen collar_cargado_screen
+        play sound sfx_collar_brilla
+        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Recuerda a Penélope. Recuerda lo que ella significa para él. Y con eso, él comienza a olvidar todo lo sucedido recién."
+
+        menu:
+            "[player_name] aprieta el collar":
+                $ collar_cargado = False
+                jump collar_penelope_final_2_opcion_1a
+            "[player_name] no aprieta el collar":
+                jump collar_penelope_final_2_opcion_1b
+    else:
+        show screen collar_descargado_screen
+        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+        jump collar_atenea_opcion_2
+
+label collar_penelope_final_2_opcion_1a:
+    hide screen collar_cargado_screen
+    $ puntaje_atenea = 0
+    narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
+    # Transición a la escena y decisión primaria de origen
+    jump escena_5
+
+label collar_penelope_final_2_opcion_1b:
+    hide screen collar_cargado_screen
+    narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
+    # Transición a un final dado
+    jump final_penelope_2
+
+label collar_penelope_final_2_opcion_2:
+    hide screen collar_descargado_screen
+    narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+    # Transición a un final dado
+    jump final_penelope_2

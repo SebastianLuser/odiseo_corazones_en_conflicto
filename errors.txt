@@ -2,29 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 335: expected end of line
-    stop music bgm_murmullos
+File "game/script.rpy", line 677: expected end of line
+    stop music bgm_piano_atenea
                ^
 
-File "game/script.rpy", line 336: expected end of line
-    stop sound sfx_campana_escuela
-               ^
-
-File "game/script.rpy", line 356: expected end of line
-    stop music bgm_murmullos
-               ^
-
-File "game/script.rpy", line 357: expected end of line
-    stop sound sfx_campana_escuela
-               ^
-
-File "game/script.rpy", line 434: expected end of line
-    stop music bgm_saxofon_afrodita
-               ^
-
-File "game/script.rpy", line 450: expected end of line
-    stop music bgm_saxofon_afrodita
-               ^
-
-Ren'Py Version: Ren'Py 8.2.3.24061702
-Thu Jun 20 16:19:18 2024
+Ren'Py Version: Ren'Py 8.2.2.24061201
+Fri Jun 21 02:53:16 2024
