@@ -81,6 +81,8 @@ define bgm_piano_atenea = "piano_atenea.wav"
 define sfx_timbre_casa = "timbre_casa.mp3"
 define bgm_violin_penelope = "violin_penelope.mp3"
 
+define sfx_tocar_puerta = "tocar_puerta.wav"
+
 # Variable temporal para almacenar el nombre introducido
 default temp_name = ""
 
@@ -205,22 +207,21 @@ label game_start:
     show odiseo_dormido at left
     show penelope_neutra at right
 
-    penelope "¿Hola? ¿[player_name]? ¿Estas ahí?"
-    odiseo "¿Penélope? ¿Qué haces despierta a esta hora? ¿No deberías estar dormida ya?"
+    penelope "¿Hola? {w=1.0} ¿[player_name]? {w=1.0} ¿Estas ahí?"
+    odiseo "¿Penélope? {w=1.0} ¿Qué haces despierta a esta hora? {w=1.0} ¿No deberías estar dormida ya?"
     penelope "Sí, perdón por molestarte a esta hora, pero necesitaba preguntarte algo."
 
     hide odiseo_dormido
     show odiseo_neutro at left
 
-    odiseo "Okey, dime, ¿qué pasa?"
+    odiseo "Okey{w=.5}, dime{w=.5}, ¿qué pasa?"
     hide penelope_neutra
     show penelope_victima at right
-    penelope "..."
-    stop music
+    penelope "{w=.5}...{w=.5}"
 
     pause 3.0
 
-    penelope "Esperaba tu llamado ¿o no piensas disculparte por lo que hiciste hoy en el colegio?"
+    penelope "Esperaba tu llamado{w=1.0} ¿o no piensas disculparte por lo que hiciste hoy en el colegio?"
 
     menu:
         "En serio quieres seguir con eso.":
@@ -257,8 +258,8 @@ label opcion_2:
     hide penelope_victima
     show penelope_enojada at right
 
-    penelope "¡CLARO QUE ESTABA MOLESTA! Pero quería escucharte, no me gustó lo que pasó hoy."
-
+    penelope "¡CLARO QUE ESTABA MOLESTA! "
+    penelope "Pero quería escucharte, no me gustó lo que pasó hoy."
     hide odiseo_triste
     show odiseo_romantico at left
 
@@ -333,14 +334,14 @@ label escena_3:
 
     show afrodita_feliz at right
 
-    afrodita "¡Buen día Odiseo! Tenes mala cara... ¿Se pelearon con Penélope? ¿¡Ya no están juntos!?"
+    afrodita "¡Buen día [player_name]! Tenes mala cara... ¿Se pelearon con Penélope? ¿¡Ya no están juntos!?"
 
     odiseo "Hola Afrodita. Y no, no nos separamos. Seguimos juntos. Penélope no vino porque está enferma, y me tiene preocupado."
 
     hide afrodita_feliz
     show afrodita_traviesa at right
 
-    afrodita "Ay noooooo, que peeeeeena... En fin, mi celular está casi muerto ya y me olvidé el cargador en el aula. ¡AY, YA SE! Odiseo, ¿no me acompañas a buscarlo?"
+    afrodita "Ay noooooo, que peeeeeena... En fin, mi celular está casi muerto ya y me olvidé el cargador en el aula. ¡AY, YA SE! [player_name], ¿no me acompañas a buscarlo?"
 
     odiseo "¿En serio? ¿Ese es tu mejor movimiento? Ayer estabas más creativa."
 
@@ -431,7 +432,7 @@ label escena_4:
 
     afrodita "Todavía no logro conseguir una pareja para ir al baile. Todos me resultan muy aburridos o feos. Creo que solo hay una persona indicada."
 
-    afrodita "ODISEO, los dos sabemos que la rubia te tiene harto. ¿Por qué no le damos una sorpresa y vienes al baile conmigo?"
+    afrodita "[player_name], los dos sabemos que la rubia te tiene harto. ¿Por qué no le damos una sorpresa y vienes al baile conmigo?"
 
     menu:
         "Rechazar a Afrodita, y seguir con tu día.":
@@ -451,7 +452,7 @@ label opcion_1_acto_1_escena_4:
     hide afrodita_feliz
     show afrodita_enojada at right
 
-    afrodita "No puedo creer que A MI, me estés diciendo esto ODISEO ¡voy a hacer lo posible para que tu relación con Penélope esté arruinada!"
+    afrodita "No puedo creer que A MI, me estés diciendo esto [player_name] ¡voy a hacer lo posible para que tu relación con Penélope esté arruinada!"
 
     hide afrodita_enojada
     play sound sfx_puerta_cierra
@@ -470,7 +471,6 @@ label opcion_2_acto_1_escena_4:
 
     odiseo "¿Sabes qué? Tenés razón, PENÉLOPE siempre está con algún problema, y la verdad siempre me gustaron más las pelirrojas."
 
-    
     hide odiseo_romantico
     hide afrodita_feliz
     stop music
@@ -482,7 +482,7 @@ label opcion_2_acto_1_escena_4:
 
 label final_afrodita:
     scene final_odiseo_afrodita at full_screen with dissolve
-    narrator "Cuando las cosas funcionan no las cambies, y cuando no funcionan cámbialas y mejor si es con una pelirroja, Odiseo y Afrodita pasaron todo el día juntos, para después de clases acompañarla a la casa, espera ¿Sus padres no estaban de viaje?"
+    narrator "Cuando las cosas funcionan no las cambies, y cuando no funcionan cámbialas y mejor si es con una pelirroja, [player_name] y Afrodita pasaron todo el día juntos, para después de clases acompañarla a la casa, espera ¿Sus padres no estaban de viaje?"
     play music bgm_saxofon_afrodita
     return
     
@@ -498,7 +498,7 @@ label escena_5:
 
     odiseo "Qué clase más aburrida... ¿Qué estará haciendo Penélope? Últimamente discutimos demasiado, no sé qué pensar."
 
-    narrator "{color=#fff}¡ODISEO! ¡ATENCIÓN A MI CLASE! QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
+    narrator "{color=#fff}¡[player_name]! ¡ATENCIÓN A MI CLASE! QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
 
     odiseo "Disculpe profesor, es solo que no dormí bien."
 
@@ -509,7 +509,7 @@ label escena_5:
     show atenea_neutra at right
     play music bgm_murmullos
 
-    atenea "Buenos días Odiseo. Me resulta extraño que el profesor tenga que llamarte la atención ¿Está todo bien?"
+    atenea "Buenos días [player_name]. Me resulta extraño que el profesor tenga que llamarte la atención ¿Está todo bien?"
 
     show odiseo_neutro at left
 
@@ -559,7 +559,7 @@ label opcion_2_acto_1_escena_5:
     hide atenea_neutra
     show atenea_feliz at right
 
-    atenea "Nos vemos más tarde entonces, y sabes muy bien que nunca me ganaste en una partida Odiseo."
+    atenea "Nos vemos más tarde entonces, y sabes muy bien que nunca me ganaste en una partida [player_name]."
 
     show odiseo_dormido at left
 
@@ -597,7 +597,7 @@ label escena_6:
     odiseo "De hecho, sí las hay, pero está bien, vamos tú eres blancas."
     hide odiseo_neutro
     hide atenea_neutra
-    narrator "La partida entre ODISEO y ATENEA termina tan rápidamente como comenzó."
+    narrator "La partida entre [player_name] y ATENEA termina tan rápidamente como comenzó."
 
     show odiseo_sorprendido at left
 
@@ -621,7 +621,7 @@ label escena_6:
 
     odiseo "Eres bastante bonita cuando te pones reflexiva."
 
-    atenea "Odiseo, esto se supondría que sería una charla sobre tú y Penélope, no cambies el tema."
+    atenea "[player_name], esto se supondría que sería una charla sobre tú y Penélope, no cambies el tema."
 
     menu:
         "Pedirle ayuda directa a ATENEA.":
@@ -668,7 +668,7 @@ label opcion_2_acto_1_escena_6:
     hide atenea_neutra
     show atenea_feliz at right
 
-    atenea "Me alegra haber sido de ayuda. Nos vemos Odiseo. Saluda a Penélope de mi parte."
+    atenea "Me alegra haber sido de ayuda. Nos vemos [player_name]. Saluda a Penélope de mi parte."
 
     hide odiseo_feliz
     hide atenea_feliz
@@ -680,7 +680,7 @@ label opcion_2_acto_1_escena_6:
 
 label final_atenea:
     show screen celular_odiseo
-    narrator "Odiseo ve su celular, y sin aún señales de Penélope, decide escribirle un mensaje en el que le explica que lo mejor para ambos será que corten la relación, el aún es muy joven y no se siente preparado para estar en pareja."
+    narrator "[player_name] ve su celular, y sin aún señales de Penélope, decide escribirle un mensaje en el que le explica que lo mejor para ambos será que corten la relación, el aún es muy joven y no se siente preparado para estar en pareja."
     hide celular_odiseo with dissolve
 
     scene black with dissolve
@@ -699,10 +699,16 @@ label escena_7:
 
     odiseo "¡Penélope! ¿Estás en casa?"
 
+    pause 1.0
+
+    play sound sfx_tocar_puerta
+
+    pause 1.0
+
     play sound sfx_llaves_puerta
     show penelope_feliz at right
 
-    penelope "Odiseo! ¡Hola! ¿Qué haces aquí? ¿No deberías estar en clases aun?"
+    penelope "¡[player_name]! ¡Hola! ¿Qué haces aquí? ¿No deberías estar en clases aun?"
 
     hide odiseo_preocupado
     show odiseo_feliz at left
@@ -797,18 +803,16 @@ label opcion_2_acto_1_escena_7:
     odiseo "¿Dudar? ¿De qué dudaría? Eres la mujer más hermosa que conozco, no sé quién te pone todas esas ideas en la cabeza."
 
     hide penelope_triste
-    show penelope_enojada
-    penelope "Okey, debe ser que aún no me siento bien, han sido días raros, mejor vuelvo adentro iré a descansar. Adiós Odiseo."
+    show penelope_enojada at right
+    penelope "Okey, debe ser que aún no me siento bien, han sido días raros, mejor vuelvo adentro iré a descansar. Adiós [player_name]."
 
     hide odiseo_dormido
     show odiseo_triste at left
 
     odiseo "Sí, la verdad, fueron días raros. Hasta mañana Penélope."
-
-    odiseo "{i}Creo que debería haber sido más sincero con mis sentimientos.{/i}"
-
     play sound sfx_puerta_cierra
     hide penelope_enojada
+    odiseo "{i}Creo que debería haber sido más sincero con mis sentimientos.{/i}"
 
     pause 2.0
 
@@ -826,7 +830,7 @@ label final_penelope_2:
     play sound puerta_cierra
     play music violin_penelope
     scene puerta_casa_penelope at full_screen with dissolve
-    show odiseo_hartazgo
+    show odiseo_hartazgo at left
 
     odiseo "Después de todo sigo sin entenderla, no sé lo que le molesta y menos aún lo que le gusta. Encima que vengo a visitarla, podría estar con Afrodita ahora mismo en cambio estoy ACÁ, me voy a casa supongo que mañana hablaremos."
 
@@ -846,9 +850,15 @@ label escena_8:
 
     show calypso_silueta at right
 
-    narrator "Odiseo continuará su día escolar, las mujeres parecen estar al acecho de nuestro galán."
+    narrator "[player_name] continuará su día escolar, las mujeres parecen estar al acecho de nuestro galán."
+
+    hide odiseo_neutro
+    show odiseo_sorprendido at left
 
     odiseo "¿Qué? ¿No hay hombres en esta escuela?"
+
+    hide odiseo_sorprendido
+    show odiseo_neutro at left
 
     narrator "Gracias por jugar la demo de 'El Viaje de Odiseo: Corazones en Conflicto'. ¡Esperamos que hayas disfrutado esta experiencia! Mantente atento para la versión completa próximamente."
     hide odiseo_neutro
