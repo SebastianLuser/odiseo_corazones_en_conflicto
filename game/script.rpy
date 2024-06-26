@@ -54,6 +54,8 @@ image puerta_casa_penelope = "puerta_penelope.png"
 
 image final_odiseo_afrodita = "aula_corazones.png"
 
+image calle_tarde = "calle_tarde.png"
+
 image logo = "logo.png"
 
 image collar_descargado = "collar_descargado.png"
@@ -841,7 +843,7 @@ label final_penelope_2:
     show screen mostrar_estado_corazon
     play sound sfx_puerta_cierra
     play music violin_penelope
-    scene puerta_casa_penelope at full_screen with dissolve
+    scene calle_tarde at full_screen with dissolve
     show odiseo_hartazgo at left
 
     odiseo "Después de todo sigo sin entenderla{w=0.5}, no sé lo que le molesta y menos aún lo que le gusta.{w=0.5} Encima que vengo a visitarla{w=0.5}, podría estar con Afrodita ahora mismo en cambio estoy {b}AQUÍ{/b},{w=0.5} me voy a casa supongo que mañana hablaremos."
