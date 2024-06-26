@@ -294,9 +294,14 @@ label escena_2:
     show screen mostrar_estado_corazon
     scene habitacion_manana at full_screen with dissolve
     play sound sfx_pajaros
+
+    pause 2.0
+
     play music bgm_fondo01
 
     show odiseo_neutro at left
+
+    pause 1.0
 
     odiseo "{i}A veces no logro entender a esta mujer{w=0.5}, siempre actúa como si yo le estuviese escondiendo algo.{/i}"
     odiseo "{i}Y{w=1.0} ¿por qué sintió la necesidad de recordarme el collar? Bueno{w=0.5}, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
@@ -341,11 +346,11 @@ label escena_3:
     hide afrodita_feliz
     show afrodita_traviesa at right
 
-    afrodita "Ay noooooo{w=0.5}, que peeeeeena...{w=1.0} En fin{w=0.5}, mi celular está casi muerto ya y me olvidé el cargador en el aula. ¡AY, YA SE! [player_name], ¿no me acompañas a buscarlo?"
+    afrodita "Ay noooooo{w=0.5}, que peeeeeena...{w=1.0} En fin{w=0.5}, mi celular está casi muerto ya y me olvidé el cargador en el aula."
+    afrodita "¡AY!{w=1.0} ¡YA SE!{w=0.5} [player_name]{w=0.5}, ¿no me acompañas a buscarlo?"
+    odiseo "¿En serio? {w=1.0}¿Ese es tu mejor movimiento?{w=1.0} Ayer estabas más creativa."
 
-    odiseo "¿En serio? ¿Ese es tu mejor movimiento? Ayer estabas más creativa."
-
-    afrodita "JAJA, no sé de qué hablas tarado, dale vamos."
+    afrodita "JAJA{w=0.5}, no sé de qué hablas tarado{w=0.5}, dale vamos."
 
     menu:
         "Rechazar el pedido de Afrodita.":
@@ -358,7 +363,7 @@ label opcion_1_escena_3:
     hide odiseo_triste
     show odiseo_hartazgo at left
 
-    odiseo "No, Afrodita. Ya estoy llegando tarde, no me quiero demorar más. Nos estamos viendo."
+    odiseo "No{w=0.5}, Afrodita.{w=1.0} Ya estoy llegando tarde{w=0.5}, no me quiero demorar más.{w=1.0} Nos estamos viendo."
 
     hide odiseo_hartazgo
     hide afrodita_traviesa
@@ -377,12 +382,12 @@ label opcion_2_escena_3:
     $ puntaje_afrodita = puntaje_afrodita + 2
     hide odiseo_triste
     show odiseo_romantico at left
-    odiseo "Bueno, igual ya estoy un poco tarde. Supongo que no pasa nada si pasamos a buscar tu cargador."
+    odiseo "Bueno{w=0.5}, igual ya estoy un poco tarde.{w=1.0} Supongo que no pasa nada si pasamos a buscar tu cargador."
 
     hide afrodita_traviesa
     show afrodita_feliz at right
 
-    afrodita "Sí, son solo tres segundos. ¡Vamos!"
+    afrodita "Sí{w=0.5}, son solo tres segundos.{w=1.0} ¡Vamos!"
 
     hide afrodita_feliz
     pause 1.0
@@ -405,54 +410,54 @@ label escena_4:
 
     show odiseo_neutro at left
 
-    afrodita "¡Ahí está! Listo, ya no me voy a quedar sin batería."
+    afrodita "¡Ahí está!{w=1.0} Listo{w=0.5}, ya no me voy a quedar sin batería."
 
     show afrodita_feliz at right
 
-    odiseo "Cuidado, no vayas a romper el escritorio, que vi que subiste un poco de peso."
+    odiseo "Cuidado{w=0.5}, no vayas a romper el escritorio{w=0.5}, que vi que subiste un poco de peso."
 
-    afrodita "¿Ah sí? Entonces se ve que estuviste muy atento a mi figura."
+    afrodita "¿Ah sí?{w=1.0} Entonces se ve que estuviste muy atento a mi figura."
 
-    odiseo "Ya quisieras, bueno vamos que no quiero llegar tarde."
+    odiseo "Ya quisieras{w=0.5}, bueno vamos que no quiero llegar tarde."
 
-    afrodita "Desde cuando sos tan aburrido, si tienes excelentes calificaciones."
+    afrodita "Desde cuando sos tan aburrido{w=0.5}, si tienes excelentes calificaciones."
 
     hide odiseo_neutro
 
     show odiseo_feliz at left
 
-    odiseo "Por suerte sí, pero a vos también te iría igual de bien si estudiaras un poco más."
+    odiseo "Por suerte sí{w=0.5}, pero a vos también te iría igual de bien si estudiaras un poco más."
 
-    afrodita "Tampoco quiero parecer una nerd. Tengo cosas más importantes que hacer."
+    afrodita "Tampoco quiero parecer una nerd.{w=1.0} Tengo cosas más importantes que hacer."
 
     hide odiseo_feliz
     show odiseo_romantico at left
 
-    odiseo "Ah ¿sí? ¿Cómo qué?"
+    odiseo "Ah {w=1.0}¿sí?{w=1.0} ¿Cómo qué?"
 
-    afrodita "Todavía no logro conseguir una pareja para ir al baile. Todos me resultan muy aburridos o feos. Creo que solo hay una persona indicada."
-
-    afrodita "[player_name], los dos sabemos que la rubia te tiene harto. ¿Por qué no le damos una sorpresa y vienes al baile conmigo?"
+    afrodita "Todavía no logro conseguir una pareja para ir al baile.{w=1.0} Todos me resultan muy aburridos o feos."
+    afrodita "Creo que solo hay una persona indicada."
+    afrodita "[player_name]{w=0.5}, los dos sabemos que la rubia te tiene harto.{w=1.0} ¿Por qué no le damos una sorpresa y vienes al baile conmigo?"
 
     menu:
-        "Rechazar a Afrodita, y seguir con tu día.":
+        "Rechazar a Afrodita y seguir con tu día.":
             jump opcion_1_acto_1_escena_4
 
-        "Aceptar a Afrodita, y comenzar una nueva relación con ella.":
+        "Aceptar a Afrodita y comenzar una nueva relación con ella.":
             jump opcion_2_acto_1_escena_4
 
 label opcion_1_acto_1_escena_4:
     hide odiseo_romantico
     show odiseo_feliz at left
     
-    odiseo "A ver, creo que el tinte te quema las ideas, no voy a ir contigo al baile."
+    odiseo "A ver{w=0.5}, creo que el tinte te quema las ideas{w=0.5}, no voy a ir contigo al baile."
 
-    odiseo "Y toma, come este chicle casi me despeinas con tu aliento."
+    odiseo "Y toma{w=0.5}, come este chicle casi me despeinas con tu aliento."
 
     hide afrodita_feliz
     show afrodita_enojada at right
 
-    afrodita "No puedo creer que A MI, me estés diciendo esto [player_name] ¡voy a hacer lo posible para que tu relación con Penélope esté arruinada!"
+    afrodita "No puedo creer que {b}A MI{/b}{w=0.5}, me estés diciendo esto [player_name]{w=1.0} ¡voy a hacer lo posible para que tu relación con Penélope esté arruinada!"
 
     hide afrodita_enojada
     play sound sfx_puerta_cierra
@@ -469,7 +474,7 @@ label opcion_2_acto_1_escena_4:
     $ puntaje_afrodita = puntaje_afrodita + 2
     scene fondo_corazones at full_screen with dissolve
 
-    odiseo "¿Sabes qué? Tenés razón, PENÉLOPE siempre está con algún problema, y la verdad siempre me gustaron más las pelirrojas."
+    odiseo "¿Sabes qué?{w=1.0} Tenés razón{w=0.5}, PENÉLOPE siempre está con algún problema{w=0.5}, y la verdad siempre me gustaron más las pelirrojas."
 
     hide odiseo_romantico
     hide afrodita_feliz
@@ -482,8 +487,9 @@ label opcion_2_acto_1_escena_4:
 
 label final_afrodita:
     scene final_odiseo_afrodita at full_screen with dissolve
-    narrator "Cuando las cosas funcionan no las cambies, y cuando no funcionan cámbialas y mejor si es con una pelirroja, [player_name] y Afrodita pasaron todo el día juntos, para después de clases acompañarla a la casa, espera ¿Sus padres no estaban de viaje?"
     play music bgm_saxofon_afrodita
+    narrator "Cuando las cosas funcionan no las cambies{w=0.5}, y cuando no funcionan cámbialas y mejor si es con una pelirroja{w=0.5}, [player_name] y Afrodita pasaron todo el día juntos{w=0.5}, para después de clases acompañarla a la casa{w=0.5}, espera {w=1.0}¿Sus padres no estaban de viaje?"
+
     return
     
 label escena_5:
@@ -496,11 +502,11 @@ label escena_5:
 
     show odiseo_preocupado at left
 
-    odiseo "Qué clase más aburrida... ¿Qué estará haciendo Penélope? Últimamente discutimos demasiado, no sé qué pensar."
+    odiseo "Qué clase más aburrida... {w=1.0}¿Qué estará haciendo Penélope?{w=1.0} Últimamente discutimos demasiado,{w=0.5} no sé qué pensar."
 
-    narrator "{color=#fff}¡[player_name]! ¡ATENCIÓN A MI CLASE! QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
+    narrator "{color=#fff}¡[player_name]!{w=1.0} ¡ATENCIÓN A MI CLASE!{w=1.0} QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
 
-    odiseo "Disculpe profesor, es solo que no dormí bien."
+    odiseo "Disculpe profesor{w=0.5}, es solo que no dormí bien."
 
     stop music
     play sound sfx_campana_escuela
@@ -509,17 +515,17 @@ label escena_5:
     show atenea_neutra at right
     play music bgm_murmullos
 
-    atenea "Buenos días [player_name]. Me resulta extraño que el profesor tenga que llamarte la atención ¿Está todo bien?"
+    atenea "Buenos días [player_name].{w=1.0} Me resulta extraño que el profesor tenga que llamarte la atención{w=1.0} ¿Está todo bien?"
 
     show odiseo_neutro at left
 
-    odiseo "Hola Atenea. Realmente no sé qué pensar, últimamente con Penélope solo discutimos."
+    odiseo "Hola Atenea.{w=1.0} Realmente no sé qué pensar{w=0.5}, últimamente con Penélope solo discutimos."
 
-    atenea "¿A qué se debe eso? Pensaste en hablarlo con ella, las mejores soluciones a veces son las más fáciles."
+    atenea "¿A qué se debe eso?{w=1.0} Pensaste en hablarlo con ella{w=0.5}, las mejores soluciones a veces son las más fáciles."
 
-    odiseo "Ella piensa que soy un mujeriego, y no es así. Me gustaría hablarlo pero hoy no vino a clases, se sentía enferma."
+    odiseo "Ella piensa que soy un mujeriego{w=0.5}, y no es así.{w=1.0} Me gustaría hablarlo pero hoy no vino a clases{w=0.5}, se sentía enferma."
 
-    atenea "Bueno, yo ahora tengo que ir al club de Ajedrez, pero si quieres seguir hablando, acompáñame y jugamos una partida."
+    atenea "Bueno{w=0.5}, yo ahora tengo que ir al club de Ajedrez{w=0.5}, pero si quieres seguir hablando{w=0.5}, acompáñame y jugamos una partida."
 
     menu:
         "Aceptar la ayuda de Atenea.":
@@ -533,19 +539,19 @@ label opcion_1_acto_1_escena_5:
     hide odiseo_neutro
     show odiseo_feliz at left
 
-    odiseo "Me parece bien, te voy a dejar jugar con blancas a ver si es suficiente ventaja."
+    odiseo "Me parece bien{w=0.5}, te voy a dejar jugar con blancas a ver si es suficiente ventaja."
 
     hide atenea_neutra
     show atenea_feliz at right
 
-    atenea "JA JA, sabes muy bien que nunca pudiste ganarme, bueno vamos."
+    atenea "JA JA{w=0.5}, sabes muy bien que nunca pudiste ganarme{w=0.5}, bueno vamos."
 
     hide odiseo_feliz
     hide atenea_feliz
 
     scene black with dissolve
     stop music
-    play sound puerta_cierra
+    play sound sfx_puerta_cierra
     pause 2.0
 
     jump escena_6
@@ -554,16 +560,16 @@ label opcion_2_acto_1_escena_5:
     hide odiseo_neutro
     show odiseo_feliz at left
 
-    odiseo "No, tranquila. Ya le voy a poder encontrar la vuelta, además no tengo ganas de humillarte."
+    odiseo "No{w=0.5}, tranquila.{w=1.0} Ya le voy a poder encontrar la vuelta{w=0.5}, además no tengo ganas de humillarte."
 
     hide atenea_neutra
     show atenea_feliz at right
 
-    atenea "Nos vemos más tarde entonces, y sabes muy bien que nunca me ganaste en una partida [player_name]."
+    atenea "Nos vemos más tarde entonces{w=0.5}, y sabes muy bien que nunca me ganaste en una partida [player_name]."
 
     show odiseo_dormido at left
 
-    odiseo "¡MIRA LA HORA! Ya se me hizo tarde, le prometí al club de música ir a escucharlos ¡Nos vemos!"
+    odiseo "¡MIRA LA HORA!{w=1.0} Ya se me hizo tarde{w=0.5}, le prometí al club de música ir a escucharlos{w=1.0} ¡Nos vemos!"
 
     hide odiseo_dormido
     hide atenea_feliz
@@ -587,29 +593,29 @@ label escena_6:
     show odiseo_preocupado at left
     show atenea_neutra at right
 
-    odiseo "Entonces quieres que te gane en una partida de Ajedrez, ¿y eso se supone que me ayude a resolver mis problemas?"
+    odiseo "Entonces quieres que te gane en una partida de Ajedrez{w=0.5} ¿y eso se supone que me ayude a resolver mis problemas?"
 
-    atenea "Precisamente. En mi opinión, no existe manera más eficaz de reflexionar que jugando una partida de Ajedrez."
+    atenea "Precisamente.{w=1.0} En mi opinión{w=0.5}, no existe manera más eficaz de reflexionar que jugando una partida de Ajedrez."
 
     hide odiseo_preocupado
     show odiseo_neutro at left
 
-    odiseo "De hecho, sí las hay, pero está bien, vamos tú eres blancas."
+    odiseo "De hecho{w=0.5}, sí las hay{w=0.5}, pero está bien{w=0.5}, vamos tú eres blancas."
     hide odiseo_neutro
     hide atenea_neutra
     narrator "La partida entre [player_name] y ATENEA termina tan rápidamente como comenzó."
 
     show odiseo_sorprendido at left
 
-    odiseo "¡¿Tan rápido?! Parece que perdí la práctica, últimamente estuve jugando mucho con Penélope."
+    odiseo "¡¿Tan rápido?!{w=1.0} Parece que perdí la práctica{w=0.5}, últimamente estuve jugando mucho con Penélope."
 
     show atenea_feliz at right
 
-    atenea "La práctica es la que hace al maestro así que podrías practicar más seguido conmigo. Además, antes durabas un poco más."
+    atenea "La práctica es la que hace al maestro así que podrías practicar más seguido conmigo.{w=1.0} Además{w=0.5}, antes durabas un poco más."
 
-    odiseo "Igualmente, no entiendo cuál fue el error, en ningún momento comprometí mi reina e igualmente perdí."
+    odiseo "Igualmente{w=0.5}, no entiendo cuál fue el error{w=0.5}, en ningún momento comprometí mi reina e igualmente perdí."
 
-    atenea "El problema con tu estrategia fue concentrarte más en la reina que en el rey. Es verdad que la reina es la pieza más fuerte del tablero, pero la más importante siempre va a ser el rey."
+    atenea "El problema con tu estrategia fue concentrarte más en la reina que en el rey.{w=1.0} Es verdad que la reina es la pieza más fuerte del tablero{w=0.5}, pero la más importante siempre va a ser el rey."
 
     hide atenea_feliz
     show atenea_neutra at right
@@ -621,7 +627,7 @@ label escena_6:
 
     odiseo "Eres bastante bonita cuando te pones reflexiva."
 
-    atenea "[player_name], esto se supondría que sería una charla sobre tú y Penélope, no cambies el tema."
+    atenea "[player_name]{w=0.5}, esto se supondría que sería una charla sobre tú y Penélope{w=0.5}, no cambies el tema."
 
     menu:
         "Pedirle ayuda directa a ATENEA.":
@@ -635,22 +641,22 @@ label opcion_1_acto_1_escena_6:
     hide odiseo_preocupado
     show odiseo_neutro at left
 
-    odiseo "Suena como que tú tienes una idea ¿En qué pensaste Atenea?"
+    odiseo "Suena como que tú tienes una idea{w=1.0} ¿En qué pensaste Atenea?"
 
-    atenea "No estoy diciendo que necesariamente sea así, pero tal vez priorizas demasiado los sentimientos de Penélope por sobre los tuyos. Pones la relación, por sobre ti."
+    atenea "No estoy diciendo que necesariamente sea así{w=0.5}, pero tal vez priorizas demasiado los sentimientos de Penélope por sobre los tuyos.{w=1.0} Pones la relación{w=0.5}, por sobre ti."
 
     hide odiseo_neutro
     show odiseo_sorprendido at left
 
-    odiseo "¿Estás diciendo que debería terminar con Penélope? ¿Por qué?"
+    odiseo "¿Estás diciendo que debería terminar con Penélope?{w=1.0} ¿Por qué?"
 
-    atenea "Solo te estoy ayudando a pensar un poco fuera de la caja. Tal vez lo mejor para vos ahora mismo sería concentrarte en vos mismo."
+    atenea "Solo te estoy ayudando a pensar un poco fuera de la caja.{w=1.0} Tal vez lo mejor para vos ahora mismo sería concentrarte en vos mismo."
 
     show odiseo_neutro at left
-    odiseo "Lo que dices tiene sentido. Bueno, nos vemos Atenea. Gracias."
+    odiseo "Lo que dices tiene sentido.{w=1.0} Bueno{w=0.5}, nos vemos Atenea.{w=0.5} Gracias."
 
     hide atenea_neutra
-    odiseo "{i}Le mandaré un mensaje a Penélope. Esta relación no da para mucho más.{/i}"
+    odiseo "{i}Le mandaré un mensaje a Penélope.{w=0.5} Esta relación no da para mucho más.{/i}"
     hide odiseo_neutro
 
     jump escena_collar_atenea
@@ -660,16 +666,16 @@ label opcion_2_acto_1_escena_6:
     hide odiseo_preocupado
     show odiseo_neutro at left
 
-    odiseo "Okey, era solo un chiste, pero creo que esto realmente me ayudó."
+    odiseo "Okey{w=0.5}, era solo un chiste{w=0.5}, pero creo que esto realmente me ayudó."
 
     show odiseo_feliz at left
 
-    odiseo "Muchas gracias, Atenea. Siempre es bueno hablar contigo, pero ahora mejor iré a ver a Penélope, nos vemos."
+    odiseo "Muchas gracias{w=0.5}, Atenea.{w=1.0} Siempre es bueno hablar contigo{w=0.5}, pero ahora mejor iré a ver a Penélope{w=0.5}, nos vemos."
 
     hide atenea_neutra
     show atenea_feliz at right
 
-    atenea "Me alegra haber sido de ayuda. Nos vemos [player_name]. Saluda a Penélope de mi parte."
+    atenea "Me alegra haber sido de ayuda.{w=1.0} Nos vemos [player_name].{w=1.0} Saluda a Penélope de mi parte."
 
     hide odiseo_feliz
     hide atenea_feliz
@@ -681,7 +687,7 @@ label opcion_2_acto_1_escena_6:
 
 label final_atenea:
     show screen celular_odiseo_screen
-    narrator "[player_name] ve su celular, y sin aún señales de Penélope, decide escribirle un mensaje en el que le explica que lo mejor para ambos será que corten la relación, el aún es muy joven y no se siente preparado para estar en pareja."
+    narrator "[player_name] ve su celular{w=0.5}, y sin aún señales de Penélope{w=0.5}, decide escribirle un mensaje en el que le explica que lo mejor para ambos será que corten la relación{w=0.5}, el aún es muy joven y no se siente preparado para estar en pareja."
     hide celular_odiseo_screen with dissolve
 
     scene black with dissolve
@@ -698,7 +704,7 @@ label escena_7:
     show odiseo_preocupado at left
     play sound sfx_timbre_casa
 
-    odiseo "¡Penélope! ¿Estás en casa?"
+    odiseo "¡Penélope! {w=1.0}¿Estás en casa?"
 
     pause 1.0
 
@@ -709,42 +715,42 @@ label escena_7:
     play sound sfx_llaves_puerta
     show penelope_feliz at right
 
-    penelope "¡[player_name]! ¡Hola! ¿Qué haces aquí? ¿No deberías estar en clases aun?"
+    penelope "¡[player_name]!{w=1.0} ¡Hola!{w=0.5} ¿Qué haces aquí?{w=0.5} ¿No deberías estar en clases aun?"
 
     hide odiseo_preocupado
     show odiseo_feliz at left
 
-    odiseo "Debería, sí, pero quería ver cómo estabas, me tenías muy preocupado."
+    odiseo "Debería{w=0.5}, sí{w=0.5}, pero quería ver cómo estabas{w=0.5}, me tenías muy preocupado."
 
     hide penelope_feliz
     show penelope_enojada at right
     
-    penelope "¿A sí? ¿Y desde cuándo te preocupo tanto? Anoche no parecías tan preocupado."
+    penelope "¿A sí?{w=1.0} ¿Y desde cuándo te preocupo tanto? {w=1.0}Anoche no parecías tan preocupado."
 
     hide odiseo_feliz
     show odiseo_neutro at left
 
-    odiseo "Por favor, Penélope, no empieces. Sabes muy bien que me importas mucho, y te estuve notando un poco rara últimamente."
+    odiseo "Por favor{w=0.5}, Penélope{w=0.5}, no empieces.{w=1.0} Sabes muy bien que me importas mucho{w=0.5}, y te estuve notando un poco rara últimamente."
 
     hide penelope_enojada
     show penelope_avergonzada at right
 
-    penelope "¿Rara? ¿Yo? Debe ser cosa tuya, o seguro que la teñida de Afrodita te anda metiendo ideas en la cabeza."
+    penelope "¿Rara?{w=0.5} ¿Yo?{w=0.5} Debe ser cosa tuya{w=0.5}, o seguro que la teñida de Afrodita te anda metiendo ideas en la cabeza."
 
     hide odiseo_neutro
     show odiseo_preocupado at left
 
-    odiseo "Deja de cambiar el tema, vamos decime qué te anda pasando."
+    odiseo "Deja de cambiar el tema{w=0.5}, vamos decime qué te anda pasando."
 
     hide penelope_avergonzada
     show penelope_enojada at right
 
-    penelope "¡Constantemente se te están confesando otras chicas! Y todas son más lindas, interesantes e inteligentes que yo."
+    penelope "¡Constantemente se te están confesando otras chicas!{w=0.5} Y todas son más lindas{w=0.5}, interesantes e inteligentes que yo."
 
     hide odiseo_preocupado
     show odiseo_hartazgo at left
 
-    odiseo "¡Eso no es verdad! Veamos, sí obviamente hay chicas interesadas en mí."
+    odiseo "¡Eso no es verdad!{w=1.0} Veamos{w=0.5}, sí obviamente hay chicas interesadas en mí."
     
     hide odiseo_hartazgo
     show odiseo_romantico at left
@@ -754,31 +760,31 @@ label escena_7:
     hide penelope_enojada
     show penelope_triste at right
 
-    penelope "Y aunque así sea, no te creo que nunca dudes de eso. ¿En serio yo soy la única para vos?"
+    penelope "Y aunque así sea{w=0.5}, no te creo que nunca dudes de eso.{w=0.5} ¿En serio yo soy la única para vos?"
 
     menu:
         "Admitir que dudas, pero aun así decidís seguir adelante.":
             jump opcion_1_acto_1_escena_7
 
-        "Esconder tus dudas, y mentirle a PENÉLOPE.":
+        "Esconder tus dudas y mentirle a PENÉLOPE.":
             jump opcion_2_acto_1_escena_7
 
 label opcion_1_acto_1_escena_7:
     hide odiseo_romantico
     show odiseo_hartazgo at left
 
-    odiseo "No voy a mentirte, hay veces en las que puedo llegar a dudar, pero me acuerdo de lo bien que me siento a tu lado y las dudas se me despejan."
+    odiseo "No voy a mentirte{w=0.5}, hay veces en las que puedo llegar a dudar{w=0.5}, pero me acuerdo de lo bien que me siento a tu lado y las dudas se me despejan."
 
     show penelope_feliz_llorando at right
 
-    penelope "Siempre encuentras la manera de quedar bien parado. Me gustas mucho, [player_name]. Ven entra, más tarde acompáñame a comprar medicamentos."
+    penelope "Siempre encuentras la manera de quedar bien parado.{w=1.0} Me gustas mucho{w=0.5}, [player_name]. Ven entra{w=0.5}, más tarde acompáñame a comprar medicamentos."
 
     hide penelope_feliz_llorando
 
     pause 1.0
 
     hide odiseo_hartazgo
-
+    play sound sfx_puerta_cierra
     scene black with dissolve
     stop music
     pause 1.0
@@ -787,11 +793,10 @@ label opcion_1_acto_1_escena_7:
 label final_penelope_1:
     scene black
     show screen mostrar_estado_corazon
-    play sound puerta_cierra
-    play music violin_penelope
+    play music bgm_violin_penelope
     scene puerta_casa_penelope at full_screen with dissolve
 
-    narrator "A veces ser honesto es la solución, otras veces, no tanto. Pero mañana será otro día, nuevas decisiones nos esperan."
+    narrator "A veces ser honesto es la solución{w=0.5}, otras veces{w=0.5}, no tanto.{w=1.0} Pero mañana será otro día,{w=0.5} nuevas decisiones nos esperan."
     pause 3.0
     scene black with dissolve
     stop music
@@ -801,16 +806,16 @@ label opcion_2_acto_1_escena_7:
     hide odiseo_romantico
     show odiseo_dormido at left
 
-    odiseo "¿Dudar? ¿De qué dudaría? Eres la mujer más hermosa que conozco, no sé quién te pone todas esas ideas en la cabeza."
+    odiseo "¿Dudar?{w=1.0} ¿De qué dudaría?{w=1.0} Eres la mujer más hermosa que conozco,{w=0.5} no sé quién te pone todas esas ideas en la cabeza."
 
     hide penelope_triste
     show penelope_enojada at right
-    penelope "Okey, debe ser que aún no me siento bien, han sido días raros, mejor vuelvo adentro iré a descansar. Adiós [player_name]."
+    penelope "Okey{w=0.5}, debe ser que aún no me siento bien{w=0.5}, han sido días raros{w=0.5}, mejor vuelvo adentro iré a descansar.{w=1.0} Adiós [player_name]."
 
     hide odiseo_dormido
     show odiseo_triste at left
 
-    odiseo "Sí, la verdad, fueron días raros. Hasta mañana Penélope."
+    odiseo "Sí{w=0.5}, la verdad{w=0.5}, fueron días raros.{w=1.0} Hasta mañana Penélope."
     play sound sfx_puerta_cierra
     hide penelope_enojada
     odiseo "{i}Creo que debería haber sido más sincero con mis sentimientos.{/i}"
@@ -828,12 +833,12 @@ label opcion_2_acto_1_escena_7:
 label final_penelope_2:
     scene black
     show screen mostrar_estado_corazon
-    play sound puerta_cierra
+    play sound sfx_puerta_cierra
     play music violin_penelope
     scene puerta_casa_penelope at full_screen with dissolve
     show odiseo_hartazgo at left
 
-    odiseo "Después de todo sigo sin entenderla, no sé lo que le molesta y menos aún lo que le gusta. Encima que vengo a visitarla, podría estar con Afrodita ahora mismo en cambio estoy ACÁ, me voy a casa supongo que mañana hablaremos."
+    odiseo "Después de todo sigo sin entenderla{w=0.5}, no sé lo que le molesta y menos aún lo que le gusta.{w=0.5} Encima que vengo a visitarla{w=0.5}, podría estar con Afrodita ahora mismo en cambio estoy {b}AQUÍ{/b},{w=0.5} me voy a casa supongo que mañana hablaremos."
 
     scene black with dissolve
     pause 2.0
@@ -851,17 +856,17 @@ label escena_8:
 
     show calypso_silueta at right
 
-    narrator "[player_name] continuará su día escolar, las mujeres parecen estar al acecho de nuestro galán."
+    narrator "[player_name] continuará su día escolar{w=0.5}, las mujeres parecen estar al acecho de nuestro galán."
 
     hide odiseo_neutro
     show odiseo_sorprendido at left
 
-    odiseo "¿Qué? ¿No hay hombres en esta escuela?"
+    odiseo "¿Qué?{w=0.5} ¿No hay hombres en esta escuela?"
 
     hide odiseo_sorprendido
     show odiseo_neutro at left
 
-    narrator "Gracias por jugar la demo de 'El Viaje de Odiseo: Corazones en Conflicto'. ¡Esperamos que hayas disfrutado esta experiencia! Mantente atento para la versión completa próximamente."
+    narrator "Gracias por jugar la demo de 'El Viaje de Odiseo: Corazones en Conflicto'.{w=0.5} ¡Esperamos que hayas disfrutado esta experiencia!{w=0.5} Mantente atento para la versión completa próximamente."
     hide odiseo_neutro
     # Final de la demo
     return
@@ -872,7 +877,7 @@ label escena_collar_afrodita:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Recuerda a Penélope. Recuerda lo que ella significa para él. Y con eso, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
 
         menu:
             "[player_name] aprieta el collar":
@@ -882,25 +887,25 @@ label escena_collar_afrodita:
                 jump collar_afrodita_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
         jump collar_afrodita_opcion_2
 
 label collar_afrodita_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_afrodita = 0
-    narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
     # Transición a la escena y decisión primaria de origen
     jump escena_3
 
 label collar_afrodita_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
+    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
     # Transición a un final dado
     jump final_afrodita
 
 label collar_afrodita_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
     # Transición a un final dado
     jump final_afrodita
 
@@ -911,7 +916,7 @@ label escena_collar_atenea:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Recuerda a Penélope. Recuerda lo que ella significa para él. Y con eso, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
 
         menu:
             "[player_name] aprieta el collar":
@@ -921,25 +926,25 @@ label escena_collar_atenea:
                 jump collar_atenea_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
         jump collar_atenea_opcion_2
 
 label collar_atenea_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_atenea = 0
-    narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
     # Transición a la escena y decisión primaria de origen
     jump escena_5
 
 label collar_atenea_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
+    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
     # Transición a un final dado
     jump final_atenea
 
 label collar_atenea_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
     # Transición a un final dado
     jump final_atenea
 
@@ -950,7 +955,7 @@ label escena_collar_penelope_final_1:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Recuerda a Penélope. Recuerda lo que ella significa para él. Y con eso, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
 
         menu:
             "[player_name] aprieta el collar":
@@ -960,25 +965,25 @@ label escena_collar_penelope_final_1:
                 jump collar_penelope_final_1_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
         jump collar_atenea_opcion_2
 
 label collar_penelope_final_1_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_atenea = 0
-    narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
     # Transición a la escena y decisión primaria de origen
     jump escena_5
 
 label collar_penelope_final_1_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
+    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
     # Transición a un final dado
     jump final_penelope_1
 
 label collar_penelope_final_1_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
     # Transición a un final dado
     jump final_penelope_1
 
@@ -989,7 +994,7 @@ label escena_collar_penelope_final_2:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Recuerda a Penélope. Recuerda lo que ella significa para él. Y con eso, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
 
         menu:
             "[player_name] aprieta el collar":
@@ -999,24 +1004,24 @@ label escena_collar_penelope_final_2:
                 jump collar_penelope_final_2_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
         jump collar_atenea_opcion_2
 
 label collar_penelope_final_2_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_atenea = 0
-    narrator "[player_name] aprieta el collar. Cuando vuelve en sí, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
     # Transición a la escena y decisión primaria de origen
     jump escena_5
 
 label collar_penelope_final_2_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar. Él elige no aferrarse al pasado. Elige seguir adelante..."
+    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
     # Transición a un final dado
     jump final_penelope_2
 
 label collar_penelope_final_2_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name], él recuerda su collar. Pero este ya no tiene el mismo valor emocional, la misma importancia, que solía tener. Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
     # Transición a un final dado
     jump final_penelope_2
