@@ -65,27 +65,27 @@ image celular_odiseo = "odiseo_celular.png"
 
 # SFX y BGM
 define sfx_telefono = "telefono_sonando.mp3"
-define bgm_grillos = "grillos_y_brisa.wav"
-define sfx_cortar_llamada = "cortar_llamada.wav"
-define sfx_collar_brilla = "collar_brilla.wav"
+define bgm_grillos = "grillos_y_brisa.mp3"
+define sfx_cortar_llamada = "cortar_llamada.mp3"
+define sfx_collar_brilla = "collar_brilla.mp3"
 
-define sfx_pajaros = "pajaros_cantando.wav"
+define sfx_pajaros = "pajaros_cantando.mp3"
 define bgm_fondo01 = "musica_fondo01.mp3"
 
 define sfx_campana_escuela = "campana_escuela.mp3"
-define bgm_murmullos = "murmullos.wav"
+define bgm_murmullos = "murmullos.mp3"
 
-define sfx_puerta_cierra = "puerta_cierra.wav"
-define bgm_saxofon_afrodita = "saxofon_afrodita.wav"
+define sfx_puerta_cierra = "puerta_cierra.mp3"
+define bgm_saxofon_afrodita = "saxofon_afrodita.mp3"
 
-define bgm_piano_atenea = "piano_atenea.wav"
+define bgm_piano_atenea = "piano_atenea.mp3"
 
-define sfx_timbre_casa = "timbre_casa.wav"
+define sfx_timbre_casa = "timbre_casa.mp3"
 define bgm_violin_penelope = "violin_penelope.mp3"
 
-define sfx_tocar_puerta = "tocar_puerta.wav"
+define sfx_tocar_puerta = "tocar_puerta.mp3"
 
-define sfx_llaves_puerta = "llaves_puerta.wav"
+define sfx_llaves_puerta = "llaves_puerta.mp3"
 
 # Variable temporal para almacenar el nombre introducido
 default temp_name = ""
