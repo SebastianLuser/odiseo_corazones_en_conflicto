@@ -304,7 +304,7 @@ label escena_2:
     pause 1.0
 
     odiseo "{i}A veces no logro entender a esta mujer{w=0.5}, siempre actúa como si yo le estuviese escondiendo algo.{/i}"
-    odiseo "{i}Y{w=1.0} ¿por qué sintió la necesidad de recordarme el collar? Bueno{w=0.5}, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
+    odiseo "{i}Y{w=1.0} ¿por qué sintió la necesidad de recordarme el collar?{w=0.5} Bueno{w=0.5}, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
     hide odiseo_neutro
 
     scene black with dissolve
@@ -474,6 +474,9 @@ label opcion_2_acto_1_escena_4:
     $ puntaje_afrodita = puntaje_afrodita + 2
     scene fondo_corazones at full_screen with dissolve
 
+    show odiseo_romantico at left
+    show afrodita_feliz at right
+
     odiseo "¿Sabes qué?{w=1.0} Tenés razón{w=0.5}, PENÉLOPE siempre está con algún problema{w=0.5}, y la verdad siempre me gustaron más las pelirrojas."
 
     hide odiseo_romantico
@@ -500,6 +503,11 @@ label escena_5:
     scene aula_llena at full_screen with dissolve
     play music bgm_murmullos
 
+    pause 2.0
+
+    stop music
+    play music bgm_fondo01
+
     show odiseo_preocupado at left
 
     odiseo "Qué clase más aburrida... {w=1.0}¿Qué estará haciendo Penélope?{w=1.0} Últimamente discutimos demasiado,{w=0.5} no sé qué pensar."
@@ -508,12 +516,10 @@ label escena_5:
 
     odiseo "Disculpe profesor{w=0.5}, es solo que no dormí bien."
 
-    stop music
     play sound sfx_campana_escuela
     hide screen aula_llena
     scene pasillo_escuela at full_screen with dissolve
     show atenea_neutra at right
-    play music bgm_murmullos
 
     atenea "Buenos días [player_name].{w=1.0} Me resulta extraño que el profesor tenga que llamarte la atención{w=1.0} ¿Está todo bien?"
 
