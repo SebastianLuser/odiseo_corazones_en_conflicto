@@ -198,6 +198,7 @@ label game_start:
     hide screen collar_descargado_screen
     hide screen collar_cargado_screen
     show screen logo_screen with dissolve
+    play sound sfx_collar_brilla
     pause 2.0
     hide screen logo_screen with dissolve
     show screen mostrar_estado_corazon
