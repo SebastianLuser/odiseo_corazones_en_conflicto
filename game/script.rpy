@@ -382,7 +382,7 @@ label opcion_1_escena_3:
 
 
 label opcion_2_escena_3:
-    $ puntaje_afrodita = puntaje_afrodita + 2
+    $ puntaje_afrodita = puntaje_afrodita + 5
     hide odiseo_triste
     show odiseo_romantico at left
     odiseo "Bueno{w=0.5}, igual ya estoy un poco tarde.{w=1.0} Supongo que no pasa nada si pasamos a buscar tu cargador."
@@ -450,6 +450,7 @@ label escena_4:
             jump opcion_2_acto_1_escena_4
 
 label opcion_1_acto_1_escena_4:
+    $ puntaje_afrodita = puntaje_afrodita - 5
     hide odiseo_romantico
     show odiseo_feliz at left
     
@@ -474,7 +475,7 @@ label opcion_1_acto_1_escena_4:
     jump escena_5
 
 label opcion_2_acto_1_escena_4:
-    $ puntaje_afrodita = puntaje_afrodita + 2
+    $ puntaje_afrodita = puntaje_afrodita + 5
     scene fondo_corazones at full_screen with dissolve
 
     show odiseo_romantico at left
@@ -544,7 +545,7 @@ label escena_5:
             jump opcion_2_acto_1_escena_5
 
 label opcion_1_acto_1_escena_5:
-    $ puntaje_atenea  = puntaje_atenea + 2 
+    $ puntaje_atenea  = puntaje_atenea + 5 
     hide odiseo_neutro
     show odiseo_feliz at left
 
@@ -646,7 +647,7 @@ label escena_6:
             jump opcion_2_acto_1_escena_6
 
 label opcion_1_acto_1_escena_6:
-    $ puntaje_atenea  = puntaje_atenea + 2 
+    $ puntaje_atenea  = puntaje_atenea + 5 
     hide odiseo_preocupado
     show odiseo_neutro at left
 
@@ -672,6 +673,7 @@ label opcion_1_acto_1_escena_6:
 
     
 label opcion_2_acto_1_escena_6:
+    $ puntaje_atenea  = puntaje_atenea - 5 
     hide odiseo_preocupado
     show odiseo_neutro at left
 
