@@ -943,7 +943,7 @@ label escena_collar_afrodita:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar,{w=0.5} el que le entrego Penélope.{w=0.5} Reflexiona lo que ella significa para él{w=0.5} ¿Qué hará?"
 
         menu:
             "[player_name] aprieta el collar":
@@ -955,25 +955,25 @@ label escena_collar_afrodita:
                 jump collar_afrodita_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
         jump collar_afrodita_opcion_2
 
 label collar_afrodita_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_afrodita = 0
-    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar y cierra los ojos,{w=0.5} al volver a abrirlos el tiempo ha vuelto atrás,{w=0.5} pero él no se acuerda de nada."
     # Transición a la escena y decisión primaria de origen
     jump escena_3
 
 label collar_afrodita_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
+    narrator "[player_name] decide no apretar el collar.{w=0.5} Sus sentimientos han cambiado,{w=0.5} él también."
     # Transición a un final dado
     jump final_afrodita
 
 label collar_afrodita_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
     # Transición a un final dado
     jump final_afrodita
 
@@ -984,7 +984,7 @@ label escena_collar_atenea:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar,{w=0.5} el que le entrego Penélope.{w=0.5} Reflexiona lo que ella significa para él{w=0.5} ¿Qué hará?"
 
         menu:
             "[player_name] aprieta el collar":
@@ -996,25 +996,25 @@ label escena_collar_atenea:
                 jump collar_atenea_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
         jump collar_atenea_opcion_2
 
 label collar_atenea_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_atenea = 0
-    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar y cierra los ojos,{w=0.5} al volver a abrirlos el tiempo ha vuelto atrás,{w=0.5} pero él no se acuerda de nada."
     # Transición a la escena y decisión primaria de origen
     jump escena_5
 
 label collar_atenea_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
+    narrator "[player_name] decide no apretar el collar.{w=0.5} Sus sentimientos han cambiado,{w=0.5} él también."
     # Transición a un final dado
     jump final_atenea
 
 label collar_atenea_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
     # Transición a un final dado
     jump final_atenea
 
@@ -1025,7 +1025,7 @@ label escena_collar_penelope_final_1:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar,{w=0.5} el que le entrego Penélope.{w=0.5} Reflexiona lo que ella significa para él{w=0.5} ¿Qué hará?"
 
         menu:
             "[player_name] aprieta el collar":
@@ -1037,25 +1037,25 @@ label escena_collar_penelope_final_1:
                 jump collar_penelope_final_1_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
         jump collar_atenea_opcion_2
 
 label collar_penelope_final_1_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_atenea = 0
-    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar y cierra los ojos,{w=0.5} al volver a abrirlos el tiempo ha vuelto atrás,{w=0.5} pero él no se acuerda de nada."
     # Transición a la escena y decisión primaria de origen
     jump escena_5
 
 label collar_penelope_final_1_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
+    narrator "[player_name] decide no apretar el collar.{w=0.5} Sus sentimientos han cambiado,{w=0.5} él también."
     # Transición a un final dado
     jump final_penelope_1
 
 label collar_penelope_final_1_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
     # Transición a un final dado
     jump final_penelope_1
 
@@ -1066,7 +1066,7 @@ label escena_collar_penelope_final_2:
     if collar_cargado:
         show screen collar_cargado_screen
         play sound sfx_collar_brilla
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Recuerda a Penélope.{w=0.5} Recuerda lo que ella significa para él.{w=0.5} Y con eso{w=0.5}, él comienza a olvidar todo lo sucedido recién."
+        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar,{w=0.5} el que le entrego Penélope.{w=0.5} Reflexiona lo que ella significa para él{w=0.5} ¿Qué hará?"
 
         menu:
             "[player_name] aprieta el collar":
@@ -1078,24 +1078,24 @@ label escena_collar_penelope_final_2:
                 jump collar_penelope_final_2_opcion_1b
     else:
         show screen collar_descargado_screen
-        narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+        narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
         jump collar_atenea_opcion_2
 
 label collar_penelope_final_2_opcion_1a:
     hide screen collar_cargado_screen
     $ puntaje_atenea = 0
-    narrator "[player_name] aprieta el collar.{w=0.5} Cuando vuelve en sí{w=0.5}, está de vuelta donde todo comenzó a salirse de rumbo..."
+    narrator "[player_name] aprieta el collar y cierra los ojos,{w=0.5} al volver a abrirlos el tiempo ha vuelto atrás,{w=0.5} pero él no se acuerda de nada."
     # Transición a la escena y decisión primaria de origen
     jump escena_5
 
 label collar_penelope_final_2_opcion_1b:
     hide screen collar_cargado_screen
-    narrator "[player_name] elige no apretar el collar.{w=0.5} Él elige no aferrarse al pasado.{w=0.5} Elige seguir adelante..."
+    narrator "[player_name] decide no apretar el collar.{w=0.5} Sus sentimientos han cambiado,{w=0.5} él también."
     # Transición a un final dado
     jump final_penelope_2
 
 label collar_penelope_final_2_opcion_2:
     hide screen collar_descargado_screen
-    narrator "En este momento tan decisivo para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Pero este ya no tiene el mismo valor emocional{w=0.5}, la misma importancia{w=0.5}, que solía tener.{w=0.5} Ya nada puede cambiar la decisión de [player_name]."
+    narrator "En este momento crucial para [player_name]{w=0.5}, él recuerda su collar.{w=0.5} Sin embargo{w=0.5}, ya no tiene el mismo valor emocional de antes.{w=0.5} Nada puede alterar su decisión."
     # Transición a un final dado
     jump final_penelope_2
