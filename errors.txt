@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 677: expected end of line
-    stop music bgm_piano_atenea
-               ^
+File "game/script.rpy", line 548: expected statement.
+    |   hide odiseo_preocupado
+        ^
 
-Ren'Py Version: Ren'Py 8.2.2.24061201
-Fri Jun 21 02:53:16 2024
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Fri Jun 28 00:18:48 2024

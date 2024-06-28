@@ -87,6 +87,10 @@ define sfx_tocar_puerta = "tocar_puerta.mp3"
 
 define sfx_llaves_puerta = "llaves_puerta.mp3"
 
+define sfx_autos = "autos.mp3"
+define bgm_noche = "ambiente_noche.mp3"
+define sfx_click = "ui_click.mp3"
+
 # Variable temporal para almacenar el nombre introducido
 default temp_name = ""
 
@@ -150,6 +154,13 @@ screen logo_screen():
         yfill True
         add "logo.png" at truecenter
 
+screen creditos():
+    frame:
+        background Solid("#000")
+        xfill True
+        yfill True
+        add "creditos.png" at truecenter
+
 # Pantalla de entrada de nombre
 screen name_input():
     frame:
@@ -203,11 +214,13 @@ label game_start:
     hide screen logo_screen with dissolve
     show screen mostrar_estado_corazon
     scene habitacion at full_screen with dissolve 
-
+    
     play sound sfx_telefono
     pause 2.0
 
     play music bgm_grillos
+    play music sfx_autos
+    play music bgm_noche
 
     show odiseo_dormido at left
     show penelope_neutra at right
@@ -233,9 +246,11 @@ label game_start:
 
     menu:
         "¿En serio quieres seguir con eso?":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_1
 
         "Perdón, creí que estabas molesta.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_2
 
 label opcion_1:
@@ -377,9 +392,11 @@ label escena_3:
 
     menu:
         "Estoy llegando tarde.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_1_escena_3
 
         "Bueno busquémoslo.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_2_escena_3
 
 label opcion_1_escena_3:
@@ -465,9 +482,11 @@ label escena_4:
 
     menu:
         "Rechazar a Afrodita y seguir con tu día.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_1_acto_1_escena_4
 
         "Aceptar a Afrodita y comenzar una nueva relación con ella.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_2_acto_1_escena_4
 
 label opcion_1_acto_1_escena_4:
@@ -517,7 +536,10 @@ label final_afrodita:
     scene final_odiseo_afrodita at full_screen with dissolve
     play music bgm_saxofon_afrodita
     narrator "Cuando las cosas funcionan no las cambies{w=0.5}, y cuando no funcionan cámbialas y mejor si es con una pelirroja{w=0.5}, [player_name] y Afrodita pasaron todo el día juntos{w=0.5}, para después de clases acompañarla a la casa{w=0.5}, espera {w=1.0}¿Sus padres no estaban de viaje?"
-
+    scene black with dissolve
+    show screen creditos with dissolve
+    pause 10.0
+    hide screen creditos with dissolve
     return
     
 label escena_5:
@@ -534,11 +556,9 @@ label escena_5:
     show odiseo_preocupado at left
 
     odiseo "Qué clase más aburrida... {w=1.0}¿Qué estará haciendo Penélope?{w=1.0} Últimamente discutimos demasiado,{w=0.5} no sé qué pensar."
-
-
     narrator "{color=#fff}¡[player_name]!{w=1.0} ¡ATENCIÓN A MI CLASE!{w=1.0} QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
 
-|   hide odiseo_preocupado
+    hide odiseo_preocupado
     show odiseo_dormido at left
     odiseo "Disculpe profesora{w=0.5}, es solo que no dormí bien."
 
@@ -563,9 +583,11 @@ label escena_5:
 
     menu:
         "Bueno juguemos.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_1_acto_1_escena_5
 
         "Lo pensaré por mi cuenta.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_2_acto_1_escena_5
 
 label opcion_1_acto_1_escena_5:
@@ -665,9 +687,11 @@ label escena_6:
 
     menu:
         "Pedirle ayuda directa a ATENEA.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_1_acto_1_escena_6
 
         "Razonarlo vos mismo.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_2_acto_1_escena_6
 
 label opcion_1_acto_1_escena_6:
@@ -727,9 +751,11 @@ label final_atenea:
     narrator "[player_name] ve su celular{w=0.5}, y sin aún señales de Penélope{w=0.5}, decide escribirle un mensaje en el que le explica que lo mejor para ambos será que corten la relación{w=0.5}, el aún es muy joven y no se siente preparado para estar en pareja."
     hide celular_odiseo_screen with dissolve
 
-    scene black with dissolve
-    pause 1.0
     stop music
+    scene black with dissolve
+    show screen creditos with dissolve
+    pause 10.0
+    hide screen creditos with dissolve
     return
 
 label escena_7:
@@ -801,9 +827,11 @@ label escena_7:
 
     menu:
         "Admitir que dudas, pero aun así decidís seguir adelante.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_1_acto_1_escena_7
 
         "Esconder tus dudas y mentirle a PENÉLOPE.":
+            $ renpy.play("audio/ui_click.mp3")
             jump opcion_2_acto_1_escena_7
 
 label opcion_1_acto_1_escena_7:
@@ -835,8 +863,11 @@ label final_penelope_1:
 
     narrator "A veces ser honesto es la solución{w=0.5}, otras veces{w=0.5}, no tanto.{w=1.0} Pero mañana será otro día,{w=0.5} nuevas decisiones nos esperan."
     pause 3.0
-    scene black with dissolve
     stop music
+    scene black with dissolve
+    show screen creditos with dissolve
+    pause 10.0
+    hide screen creditos with dissolve
     return
 
 label opcion_2_acto_1_escena_7:
@@ -874,10 +905,11 @@ label final_penelope_2:
 
     odiseo "Después de todo sigo sin entenderla{w=0.5}, no sé lo que le molesta y menos aún lo que le gusta.{w=0.5} Encima que vengo a visitarla{w=0.5}, podría estar con Afrodita ahora mismo en cambio estoy {b}AQUÍ{/b},{w=0.5} me voy a casa supongo que mañana hablaremos."
 
-    scene black with dissolve
     pause 2.0
-    
-    stop music
+    scene black with dissolve
+    show screen creditos with dissolve
+    pause 10.0
+    hide screen creditos with dissolve
     return
 
 label escena_8:
@@ -915,9 +947,11 @@ label escena_collar_afrodita:
 
         menu:
             "[player_name] aprieta el collar":
+                $ renpy.play("audio/ui_click.mp3")
                 $ collar_cargado = False
                 jump collar_afrodita_opcion_1a
             "[player_name] no aprieta el collar":
+                $ renpy.play("audio/ui_click.mp3")
                 jump collar_afrodita_opcion_1b
     else:
         show screen collar_descargado_screen
@@ -955,8 +989,10 @@ label escena_collar_atenea:
         menu:
             "[player_name] aprieta el collar":
                 $ collar_cargado = False
+                $ renpy.play("audio/ui_click.mp3")
                 jump collar_atenea_opcion_1a
             "[player_name] no aprieta el collar":
+                $ renpy.play("audio/ui_click.mp3")
                 jump collar_atenea_opcion_1b
     else:
         show screen collar_descargado_screen
@@ -994,8 +1030,10 @@ label escena_collar_penelope_final_1:
         menu:
             "[player_name] aprieta el collar":
                 $ collar_cargado = False
+                $ renpy.play("audio/ui_click.mp3")
                 jump collar_penelope_final_1_opcion_1a
             "[player_name] no aprieta el collar":
+                $ renpy.play("audio/ui_click.mp3")
                 jump collar_penelope_final_1_opcion_1b
     else:
         show screen collar_descargado_screen
@@ -1033,8 +1071,10 @@ label escena_collar_penelope_final_2:
         menu:
             "[player_name] aprieta el collar":
                 $ collar_cargado = False
+                $ renpy.play("audio/ui_click.mp3")
                 jump collar_penelope_final_2_opcion_1a
             "[player_name] no aprieta el collar":
+                $ renpy.play("audio/ui_click.mp3")
                 jump collar_penelope_final_2_opcion_1b
     else:
         show screen collar_descargado_screen
