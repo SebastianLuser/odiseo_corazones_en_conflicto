@@ -363,20 +363,23 @@ label escena_3:
 
     odiseo "Hola Afrodita.{w=1.0} Y no{w=0.5}, no nos separamos.{w=1.0} Seguimos juntos."
     odiseo "Penélope no vino porque está enferma{w=0.5}, y me tiene preocupado."
+    
     hide afrodita_feliz
     show afrodita_traviesa at right
-
-    afrodita "Ay noooooo{w=0.5}, que peeeeeena...{w=1.0} En fin{w=0.5}, mi celular está casi muerto ya y me olvidé el cargador en el aula."
+    afrodita "Ay noooooo{w=0.5}, qué peeeeeena...{w=1.0} En fin{w=0.5}, mi celular está casi muerto ya y me olvidé el cargador en el aula."
     afrodita "¡AY!{w=1.0} ¡YA SE!{w=0.5} [player_name]{w=0.5}, ¿no me acompañas a buscarlo?"
+    
+    hide odiseo_triste
+    show odiseo_feliz at left
     odiseo "¿En serio? {w=1.0}¿Ese es tu mejor movimiento?{w=1.0} Ayer estabas más creativa."
 
     afrodita "JAJA{w=0.5}, no sé de qué hablas tarado{w=0.5}, dale vamos."
 
     menu:
-        "Rechazar el pedido de Afrodita.":
+        "Estoy llegando tarde.":
             jump opcion_1_escena_3
 
-        "Aceptar el pedido de Afrodita.":
+        "Bueno busquémoslo.":
             jump opcion_2_escena_3
 
 label opcion_1_escena_3:
@@ -407,7 +410,7 @@ label opcion_2_escena_3:
     hide afrodita_traviesa
     show afrodita_feliz at right
 
-    afrodita "Sí{w=0.5}, son solo tres segundos.{w=1.0} ¡Vamos!"
+    afrodita "Siiii{w=0.5}, son solo tres segundos.{w=1.0} ¡Vamos!"
 
     hide afrodita_feliz
     pause 1.0
@@ -428,7 +431,7 @@ label escena_4:
     play sound sfx_puerta_cierra
     play music bgm_saxofon_afrodita
 
-    show odiseo_neutro at left
+    show odiseo_feliz at left
 
     afrodita "¡Ahí está!{w=1.0} Listo{w=0.5}, ya no me voy a quedar sin batería."
 
@@ -438,12 +441,13 @@ label escena_4:
 
     afrodita "¿Ah sí?{w=1.0} Entonces se ve que estuviste muy atento a mi figura."
 
+    hide odiseo_feliz
+    show odiseo_preocupado at left
     odiseo "Ya quisieras{w=0.5}, bueno vamos que no quiero llegar tarde."
 
     afrodita "Desde cuando sos tan aburrido{w=0.5}, si tienes excelentes calificaciones."
 
-    hide odiseo_neutro
-
+    hide odiseo_preocupado
     show odiseo_feliz at left
 
     odiseo "Por suerte sí{w=0.5}, pero a vos también te iría igual de bien si estudiaras un poco más."
@@ -498,7 +502,7 @@ label opcion_2_acto_1_escena_4:
     show odiseo_romantico at left
     show afrodita_feliz at right
 
-    odiseo "¿Sabes qué?{w=1.0} Tenés razón{w=0.5}, PENÉLOPE siempre está con algún problema{w=0.5}, y la verdad siempre me gustaron más las pelirrojas."
+    odiseo "¿Sabes qué?{w=1.0} Tienes razón{w=0.5}, Penélope siempre está con algún problema{w=0.5}, y la verdad siempre me gustaron más las pelirrojas."
 
     hide odiseo_romantico
     hide afrodita_feliz
@@ -531,20 +535,23 @@ label escena_5:
 
     odiseo "Qué clase más aburrida... {w=1.0}¿Qué estará haciendo Penélope?{w=1.0} Últimamente discutimos demasiado,{w=0.5} no sé qué pensar."
 
+
     narrator "{color=#fff}¡[player_name]!{w=1.0} ¡ATENCIÓN A MI CLASE!{w=1.0} QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
 
+|   hide odiseo_preocupado
+    show odiseo_dormido at left
     odiseo "Disculpe profesora{w=0.5}, es solo que no dormí bien."
 
     play sound sfx_campana_escuela
     hide screen aula_llena
     scene pasillo_escuela at full_screen with dissolve
+    play sound bgm_murmullos volume 0.1
+
     show atenea_neutra at right
 
     atenea "Buenos días [player_name].{w=1.0} Me resulta extraño que la profesora tenga que llamarte la atención{w=1.0} ¿Está todo bien?"
 
-    show odiseo_neutro at left
-
-    play sound bgm_murmullos volume 0.1
+    show odiseo_preocupado at left
 
     odiseo "Hola Atenea.{w=1.0} Realmente no sé qué pensar{w=0.5}, últimamente con Penélope solo discutimos."
 
@@ -555,15 +562,15 @@ label escena_5:
     atenea "Bueno{w=0.5}, yo ahora tengo que ir al club de Ajedrez{w=0.5}, pero si quieres seguir hablando{w=0.5}, acompáñame y jugamos una partida."
 
     menu:
-        "Aceptar la ayuda de Atenea.":
+        "Bueno juguemos.":
             jump opcion_1_acto_1_escena_5
 
-        "Rechazar la ayuda de Atenea.":
+        "Lo pensaré por mi cuenta.":
             jump opcion_2_acto_1_escena_5
 
 label opcion_1_acto_1_escena_5:
     $ puntaje_atenea  = puntaje_atenea + 5 
-    hide odiseo_neutro
+    hide odiseo_preocupado
     show odiseo_feliz at left
 
     odiseo "Me parece bien{w=0.5}, te voy a dejar jugar con las blancas a ver si es suficiente ventaja."
@@ -584,7 +591,7 @@ label opcion_1_acto_1_escena_5:
     jump escena_6
 
 label opcion_2_acto_1_escena_5:
-    hide odiseo_neutro
+    hide odiseo_preocupado
     show odiseo_feliz at left
 
     odiseo "No{w=0.5}, tranquila.{w=1.0} Ya le voy a poder encontrar la vuelta{w=0.5}, además no tengo ganas de humillarte."
@@ -594,11 +601,11 @@ label opcion_2_acto_1_escena_5:
 
     atenea "Nos vemos más tarde entonces{w=0.5}, y sabes muy bien que nunca me ganaste en una partida [player_name]."
     hide odiseo_feliz
-    show odiseo_dormido at left
+    show odiseo_sorprendido at left
 
     odiseo "¡MIRA LA HORA!{w=1.0} Ya se me hizo tarde{w=0.5}, le prometí al club de música ir a escucharlos{w=1.0} ¡Nos vemos!"
 
-    hide odiseo_dormido
+    hide odiseo_sorprendido
     hide atenea_feliz
     show atenea_triste at right
 
@@ -679,6 +686,7 @@ label opcion_1_acto_1_escena_6:
 
     atenea "Solo te estoy ayudando a pensar un poco fuera de la caja.{w=1.0} Tal vez lo mejor para vos ahora mismo sería concentrarte en vos mismo."
 
+    hide odiseo_sorprendido
     show odiseo_neutro at left
     odiseo "Lo que dices tiene sentido.{w=1.0} Bueno{w=0.5}, nos vemos Atenea.{w=0.5} Gracias."
 
@@ -692,10 +700,11 @@ label opcion_1_acto_1_escena_6:
 label opcion_2_acto_1_escena_6:
     $ puntaje_atenea  = puntaje_atenea - 5 
     hide odiseo_preocupado
-    show odiseo_neutro at left
+    show odiseo_hartazgo at left
 
     odiseo "Okey{w=0.5}, era solo un chiste{w=0.5}, pero creo que esto realmente me ayudó."
 
+    hide odiseo_hartazgo
     show odiseo_feliz at left
 
     odiseo "Muchas gracias{w=0.5}, Atenea.{w=1.0} Siempre es bueno hablar contigo{w=0.5}, pero ahora mejor iré a ver a Penélope{w=0.5}, nos vemos."
@@ -728,9 +737,9 @@ label escena_7:
     show screen mostrar_estado_corazon
     scene puerta_casa_penelope at full_screen with dissolve
     play music bgm_violin_penelope
+    play sound sfx_timbre_casa
 
     show odiseo_preocupado at left
-    play sound sfx_timbre_casa
 
     odiseo "¡Penélope! {w=1.0}¿Estás en casa?"
 
@@ -756,7 +765,7 @@ label escena_7:
     penelope "¿A sí?{w=1.0} ¿Y desde cuándo te preocupo tanto? {w=1.0}Anoche no parecías tan preocupado."
 
     hide odiseo_feliz
-    show odiseo_neutro at left
+    show odiseo_hartazgo at left
 
     odiseo "Por favor{w=0.5}, Penélope{w=0.5}, no empieces.{w=1.0} Sabes muy bien que me importas mucho{w=0.5}, y te estuve notando un poco rara últimamente."
 
@@ -765,7 +774,7 @@ label escena_7:
 
     penelope "¿Rara?{w=0.5} ¿Yo?{w=0.5} Debe ser cosa tuya{w=0.5}, o seguro que la teñida de Afrodita te anda metiendo ideas en la cabeza."
 
-    hide odiseo_neutro
+    hide odiseo_hartazgo
     show odiseo_preocupado at left
 
     odiseo "Deja de cambiar el tema{w=0.5}, vamos decime qué te anda pasando."
@@ -831,21 +840,18 @@ label final_penelope_1:
     return
 
 label opcion_2_acto_1_escena_7:
-    hide odiseo_romantico
-    show odiseo_dormido at left
+    $ puntaje_penelope = puntaje_penelope - 6 
 
     odiseo "¿Dudar?{w=1.0} ¿De qué dudaría?{w=1.0} Eres la mujer más hermosa que conozco,{w=0.5} no sé quién te pone todas esas ideas en la cabeza."
 
-    hide penelope_victima
-    show penelope_enojada at right
     penelope "Okey{w=0.5}, debe ser que aún no me siento bien{w=0.5}, han sido días raros{w=0.5}, mejor vuelvo adentro iré a descansar.{w=1.0} Adiós [player_name]."
 
-    hide odiseo_dormido
+    hide odiseo_romantico
     show odiseo_triste at left
 
     odiseo "Sí{w=0.5}, la verdad{w=0.5}, fueron días raros.{w=1.0} Hasta mañana Penélope."
     play sound sfx_puerta_cierra
-    hide penelope_enojada
+    hide penelope_victima
     odiseo "{i}Creo que debería haber sido más sincero con mis sentimientos.{/i}"
 
     pause 2.0
