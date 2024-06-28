@@ -158,7 +158,6 @@ screen name_input():
         vbox:
             spacing 10
             label "Elige el nombre de tu personaje"
-            spacing 3
             textbutton "Elegir mi nombre" action [Show("input_name"), Hide("name_input")]
             textbutton "Elegir nombre predeterminado (Odiseo)" action [SetVariable("player_name", odiseo_name), Hide("name_input"), Show("display_name")]
 
@@ -292,9 +291,8 @@ label respuesta_penelope:
 
     odiseo "Tranquila{w=0.5}, no pienso sacármelo."
     odiseo "Que descanses."
+    hide penelope_neutra
     play sound sfx_cortar_llamada
-
-    hide penelope_enojada
 
     odiseo "{i}Qué mujer intensa{w=0.5}, mañana veré si la voy a visitar a su casa.{/i}"
 
@@ -315,18 +313,18 @@ label escena_2:
 
     play music bgm_fondo01
 
-    show odiseo_neutro at left
+    show odiseo_neutro at center
 
-    pause 1.0
+    pause 0.5
 
     odiseo "{i}A veces no logro entender a esta mujer{w=0.5}, siempre actúa como si yo le estuviese escondiendo algo.{/i}"
     
     hide odiseo_neutro
-    show odiseo_sorprendido at right
+    show odiseo_sorprendido at center
     odiseo "{i}Mira, el collar tiene una inscripción detrás.{w=0.5} 'Esta bien arrepentirse de nuestras decisiones, cuando sea así, recuerdate de mi.'"
 
     hide odiseo_sorprendido
-    show odiseo_preocupado at right
+    show odiseo_preocupado at center
     odiseo "{i}Bueno{w=0.5}, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
     hide odiseo_preocupado
 
@@ -343,7 +341,6 @@ label escena_3:
     show screen mostrar_estado_corazon
     scene pasillo_escuela at full_screen with dissolve
     play sound sfx_campana_escuela
-    play music bgm_murmullos
     play music bgm_fondo01
     show odiseo_preocupado at left
     $ puntaje_afrodita = 0 
@@ -354,7 +351,7 @@ label escena_3:
     odiseo "{i}Sin mensajes todavia{/i}"
     pause 2.0
     hide screen celular_odiseo_screen
-
+    play sound bgm_murmullos volume 0.1
     hide odiseo_preocupado
     show odiseo_triste at left
 
@@ -525,10 +522,8 @@ label escena_5:
     hide screen collar_cargado_screen
     show screen mostrar_estado_corazon
     scene aula_llena at full_screen with dissolve
-    play music bgm_murmullos
-
+    play sound bgm_murmullos volume 0.1
     pause 3.0
-
     stop music
     play music bgm_fondo01
 
@@ -548,6 +543,8 @@ label escena_5:
     atenea "Buenos días [player_name].{w=1.0} Me resulta extraño que la profesora tenga que llamarte la atención{w=1.0} ¿Está todo bien?"
 
     show odiseo_neutro at left
+
+    play sound bgm_murmullos volume 0.1
 
     odiseo "Hola Atenea.{w=1.0} Realmente no sé qué pensar{w=0.5}, últimamente con Penélope solo discutimos."
 
@@ -596,7 +593,7 @@ label opcion_2_acto_1_escena_5:
     show atenea_feliz at right
 
     atenea "Nos vemos más tarde entonces{w=0.5}, y sabes muy bien que nunca me ganaste en una partida [player_name]."
-
+    hide odiseo_feliz
     show odiseo_dormido at left
 
     odiseo "¡MIRA LA HORA!{w=1.0} Ya se me hizo tarde{w=0.5}, le prometí al club de música ir a escucharlos{w=1.0} ¡Nos vemos!"
@@ -867,7 +864,7 @@ label final_penelope_2:
     play sound sfx_puerta_cierra
     play music violin_penelope
     scene calle_tarde at full_screen with dissolve
-    show odiseo_hartazgo at left
+    show odiseo_hartazgo at center
 
     odiseo "Después de todo sigo sin entenderla{w=0.5}, no sé lo que le molesta y menos aún lo que le gusta.{w=0.5} Encima que vengo a visitarla{w=0.5}, podría estar con Afrodita ahora mismo en cambio estoy {b}AQUÍ{/b},{w=0.5} me voy a casa supongo que mañana hablaremos."
 
