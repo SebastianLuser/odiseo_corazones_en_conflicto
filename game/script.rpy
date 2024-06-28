@@ -14,7 +14,7 @@ image odiseo_hartazgo = "odiseo_hartazgo.png"
 image odiseo_romantico = "odiseo_romantico.png"
 image odiseo_triste = "odiseo_triste.png"
 image odiseo_feliz = "odiseo_feliz.png"
-image odiseo_preocupado = "odiseo_triste.png"
+image odiseo_preocupado = "odiseo_preocupado.png"
 image odiseo_sorprendido = "odiseo_sorprendido.png"
 
 image penelope_neutra = "penelope_neutra.png"
@@ -158,6 +158,7 @@ screen name_input():
         vbox:
             spacing 10
             label "Elige el nombre de tu personaje"
+            spacing 3
             textbutton "Elegir mi nombre" action [Show("input_name"), Hide("name_input")]
             textbutton "Elegir nombre predeterminado (Odiseo)" action [SetVariable("player_name", odiseo_name), Hide("name_input"), Show("display_name")]
 
@@ -214,22 +215,25 @@ label game_start:
 
     penelope "¿Hola?{w=1.0}¿[player_name]?{w=1.0}¿Estas ahí?"
     odiseo "¿Penélope?{w=1.0}¿Qué haces despierta a esta hora?{w=1.0}¿No deberías estar dormida ya?"
+    hide penelope_neutra
+    show penelope_victima at right
     penelope "Sí, perdón por molestarte a esta hora, pero necesitaba preguntarte algo."
 
     hide odiseo_dormido
     show odiseo_neutro at left
 
-    odiseo "Okey{w=.5}, dime{w=.5}, ¿qué pasa?"
-    hide penelope_neutra
-    show penelope_victima at right
+    odiseo "Está bien{w=.5}, dime{w=.5}, ¿qué pasa?"
     penelope "{w=.5}...{w=.5}"
 
     pause 3.0
 
-    penelope "Esperaba tu llamado{w=1.0} ¿o no piensas disculparte por lo que hiciste hoy en el colegio?"
+    penelope "Esperaba tu llamado{w=1.0} "
+    hide penelope_victima
+    show penelope_enojada at right
+    penelope "¿O no piensas disculparte por lo que hiciste hoy en el colegio?"
 
     menu:
-        "En serio quieres seguir con eso.":
+        "¿En serio quieres seguir con eso?":
             jump opcion_1
 
         "Perdón, creí que estabas molesta.":
@@ -247,7 +251,7 @@ label opcion_1:
     hide odiseo_hartazgo
     show odiseo_romantico at left
 
-    odiseo "Eres la única mujer en la que pienso Penélope{w=0.5}, y siempre te lo dije."
+    odiseo "Eres la única mujer en la que pienso Penélope{w=0.5}, y siempre te lo he dicho."
 
     jump respuesta_penelope
 
@@ -272,8 +276,17 @@ label opcion_2:
 
 label respuesta_penelope:
 
+    hide penelope_enojada
+    show penelope_triste at right
     penelope "Es siempre lo mismo contigo{w=0.5}, piensas que con un par de palabras bonitas me tienes a tus pies."
-    penelope "Bueno{w=0.5}, mañana no voy a ir al colegio{w=0.5}, no me siento muy bien{w=0.5}, y más vale que no te quites el collar que te regalé."
+    
+    hide penelope_triste
+    show penelope_feliz at right
+    penelope "Bueno{w=0.5}, mañana no voy a ir al colegio{w=0.5}, no me siento muy bien{w=0.5}."
+    
+    hide penelope_feliz
+    show penelope_neutra at right
+    penelope "Y más vale que no te quites el collar que te regalé."
     hide odiseo_romantico
     show odiseo_feliz at left
 
@@ -307,8 +320,15 @@ label escena_2:
     pause 1.0
 
     odiseo "{i}A veces no logro entender a esta mujer{w=0.5}, siempre actúa como si yo le estuviese escondiendo algo.{/i}"
-    odiseo "{i}Y{w=1.0} ¿por qué sintió la necesidad de recordarme el collar?{w=0.5} Bueno{w=0.5}, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
+    
     hide odiseo_neutro
+    show odiseo_sorprendido at right
+    odiseo "{i}Mira, el collar tiene una inscripción detrás.{w=0.5} 'Esta bien arrepentirse de nuestras decisiones, cuando sea así, recuerdate de mi.'"
+
+    hide odiseo_sorprendido
+    show odiseo_preocupado at right
+    odiseo "{i}Bueno{w=0.5}, supongo que voy a tener mis respuestas cuando la vea después de clases.{/i}"
+    hide odiseo_preocupado
 
     scene black with dissolve
     stop music
@@ -507,7 +527,7 @@ label escena_5:
     scene aula_llena at full_screen with dissolve
     play music bgm_murmullos
 
-    pause 2.0
+    pause 3.0
 
     stop music
     play music bgm_fondo01
@@ -518,20 +538,20 @@ label escena_5:
 
     narrator "{color=#fff}¡[player_name]!{w=1.0} ¡ATENCIÓN A MI CLASE!{w=1.0} QUE SUS NOTAS NO SE LE SUBAN A LA CABEZA.{/color}"
 
-    odiseo "Disculpe profesor{w=0.5}, es solo que no dormí bien."
+    odiseo "Disculpe profesora{w=0.5}, es solo que no dormí bien."
 
     play sound sfx_campana_escuela
     hide screen aula_llena
     scene pasillo_escuela at full_screen with dissolve
     show atenea_neutra at right
 
-    atenea "Buenos días [player_name].{w=1.0} Me resulta extraño que el profesor tenga que llamarte la atención{w=1.0} ¿Está todo bien?"
+    atenea "Buenos días [player_name].{w=1.0} Me resulta extraño que la profesora tenga que llamarte la atención{w=1.0} ¿Está todo bien?"
 
     show odiseo_neutro at left
 
     odiseo "Hola Atenea.{w=1.0} Realmente no sé qué pensar{w=0.5}, últimamente con Penélope solo discutimos."
 
-    atenea "¿A qué se debe eso?{w=1.0} Pensaste en hablarlo con ella{w=0.5}, las mejores soluciones a veces son las más fáciles."
+    atenea "¿A qué se debe eso?{w=1.0} ¿Pensaste en hablarlo con ella?{w=0.5} las mejores soluciones a veces son las más fáciles."
 
     odiseo "Ella piensa que soy un mujeriego{w=0.5}, y no es así.{w=1.0} Me gustaría hablarlo pero hoy no vino a clases{w=0.5}, se sentía enferma."
 
@@ -549,7 +569,7 @@ label opcion_1_acto_1_escena_5:
     hide odiseo_neutro
     show odiseo_feliz at left
 
-    odiseo "Me parece bien{w=0.5}, te voy a dejar jugar con blancas a ver si es suficiente ventaja."
+    odiseo "Me parece bien{w=0.5}, te voy a dejar jugar con las blancas a ver si es suficiente ventaja."
 
     hide atenea_neutra
     show atenea_feliz at right
@@ -610,7 +630,7 @@ label escena_6:
     hide odiseo_preocupado
     show odiseo_neutro at left
 
-    odiseo "De hecho{w=0.5}, sí las hay{w=0.5}, pero está bien{w=0.5}, vamos tú eres blancas."
+    odiseo "De hecho{w=0.5}, sí las hay{w=0.5}, pero está bien{w=0.5}, vamos tú eres las blancas."
     hide odiseo_neutro
     hide atenea_neutra
     narrator "La partida entre [player_name] y ATENEA termina tan rápidamente como comenzó."
@@ -769,7 +789,7 @@ label escena_7:
     odiseo "Pero tú eres la mujer que quiero para mí."
 
     hide penelope_enojada
-    show penelope_triste at right
+    show penelope_victima at right
 
     penelope "Y aunque así sea{w=0.5}, no te creo que nunca dudes de eso.{w=0.5} ¿En serio yo soy la única para vos?"
 
@@ -819,7 +839,7 @@ label opcion_2_acto_1_escena_7:
 
     odiseo "¿Dudar?{w=1.0} ¿De qué dudaría?{w=1.0} Eres la mujer más hermosa que conozco,{w=0.5} no sé quién te pone todas esas ideas en la cabeza."
 
-    hide penelope_triste
+    hide penelope_victima
     show penelope_enojada at right
     penelope "Okey{w=0.5}, debe ser que aún no me siento bien{w=0.5}, han sido días raros{w=0.5}, mejor vuelvo adentro iré a descansar.{w=1.0} Adiós [player_name]."
 
